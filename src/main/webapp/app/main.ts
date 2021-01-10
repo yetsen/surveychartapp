@@ -27,6 +27,7 @@ import AlertService from '@/shared/alert/alert.service';
 import TranslationService from '@/locale/translation.service';
 import ConfigurationService from '@/admin/configuration/configuration.service';
 import VueSmoothScroll from 'vue2-smooth-scroll'
+import VueYouTubeEmbed from 'vue-youtube-embed'
 
 /* tslint:disable */
 
@@ -41,7 +42,8 @@ Vue.use(Vue2Filters);
 Vue.use(VueSmoothScroll, {
   duration: 400,
   updateHistory: false,
-})
+});
+Vue.use(VueYouTubeEmbed);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('jhi-item-count', JhiItemCountComponent);
 Vue.component('jhi-sort-indicator', JhiSortIndicatorComponent);
