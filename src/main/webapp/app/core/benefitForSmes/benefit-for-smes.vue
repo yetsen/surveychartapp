@@ -1,6 +1,6 @@
 <template>
     <section id="benefitForSmes">
-        <h2 class="text-center">Luckmoshy`s Services</h2>
+        <h2 class="text-center">Benefits For SMEs</h2>
         <p class="text-muted mb-5 text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
         <div class="row">
             <div class="col-sm-6 col-lg-4 mb-3 text-center">
