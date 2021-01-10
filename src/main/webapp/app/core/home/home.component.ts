@@ -1,8 +1,17 @@
 import Component from 'vue-class-component';
 import { Inject, Vue } from 'vue-property-decorator';
 import LoginService from '@/account/login.service';
+import AboutModal from '@/core/aboutModal/about-modal'
+import BenefitForSmes from '@/core/benefitForSmes/benefit-for-smes'
+import TeamVideos from '@/core/teamVideos/team-videos'
 
-@Component
+@Component({
+  components: {
+    aboutModal: AboutModal,
+    benefitForSmes: BenefitForSmes,
+    teamVideos: TeamVideos
+  },
+})
 export default class Home extends Vue {
   @Inject('loginService')
   private loginService: () => LoginService;

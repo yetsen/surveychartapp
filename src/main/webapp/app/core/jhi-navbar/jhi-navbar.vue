@@ -3,18 +3,18 @@
         <b-navbar-brand class="logo" b-link to="/">
             <span class="logo-img"></span>
             <span v-text="$t('global.title')" class="navbar-title">surveyChartApp</span> <span class="navbar-version">{{version}}</span>
-        </b-navbar-brand>      
-        <b-navbar-toggle 
-        right 
-        class="jh-navbar-toggler d-lg-none" 
-        href="javascript:void(0);"  
-        data-toggle="collapse" 
-        target="header-tabs" 
-        aria-expanded="false" 
+        </b-navbar-brand>
+        <b-navbar-toggle
+        right
+        class="jh-navbar-toggler d-lg-none"
+        href="javascript:void(0);"
+        data-toggle="collapse"
+        target="header-tabs"
+        aria-expanded="false"
         aria-label="Toggle navigation">
             <font-awesome-icon icon="bars" />
         </b-navbar-toggle>
-           
+
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
                 <b-nav-item to="/" exact>
@@ -23,10 +23,25 @@
                         <span v-text="$t('global.menu.home')">Home</span>
                     </span>
                 </b-nav-item>
+                <b-nav-item>
+                    <a v-smooth-scroll href="#aboutModal">
+                        <span v-text="$t('global.menu.aboutModal')">About The Modal</span>
+                    </a>
+                </b-nav-item>
+                <b-nav-item>
+                    <a v-smooth-scroll href="#benefitForSmes">
+                        <span v-text="$t('global.menu.benefitForSmes')">Benefits for SMEs</span>
+                    </a>
+                </b-nav-item>
+                <b-nav-item>
+                    <a v-smooth-scroll href="#teamVideos">
+                        <span v-text="$t('global.menu.videos')">Team Videos</span>
+                    </a>
+                </b-nav-item>
                 <b-nav-item-dropdown
                     right
                     id="entity-menu"
-                    v-if="authenticated"
+                    v-if="hasAnyAuthority('ROLE_ADMIN') && authenticated"
                     active-class="active" class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="th-list" />
@@ -155,6 +170,19 @@
 .navbar-title {
   display: inline-block;
   vertical-align: middle;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* ==========================================================================

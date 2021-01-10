@@ -38,6 +38,9 @@
                 <span v-text="$t('home.like')">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" v-text="$t('home.github')">GitHub</a>!
             </p>
         </div>
+        <aboutModal></aboutModal>
+        <benefitForSmes></benefitForSmes>
+        <teamVideos></teamVideos>
     </div>
 </template>
 
