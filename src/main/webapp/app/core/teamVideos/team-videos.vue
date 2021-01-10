@@ -5,7 +5,7 @@
 
             </div>
             <div class="col-md-6">
-                <youtube player-width="720" player-height="480" :video-id="PAnKl7862qc"></youtube>
+                <youtube player-width="720" player-height="480" video-id="PAnKl7862qc"></youtube>
             </div>
         </div>
     </section>
