@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <ribbon></ribbon>
-    <div id="app-header">
-      <jhi-navbar></jhi-navbar>
-    </div>
+    <jhi-navbar></jhi-navbar>
     <div class="container-fluid">
       <div class="card jh-card">
         <router-view></router-view>
