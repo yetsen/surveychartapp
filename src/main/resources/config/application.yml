@@ -141,7 +141,7 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: yunusemretekin1@gmail.com
+    from: info@surveychartapp.com
   swagger:
     default-include-pattern: /api/.*
     title: surveyChartApp API
