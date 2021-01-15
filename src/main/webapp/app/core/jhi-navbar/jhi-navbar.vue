@@ -18,27 +18,31 @@
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
                 <b-nav-item to="/" exact>
-                    <a v-smooth-scroll href="#app">
+                    <a v-if="isInHomePage()" v-smooth-scroll href="#app">
                         <font-awesome-icon icon="home" />
                         <span v-text="$t('global.menu.home')">Home</span>
                     </a>
+                    <span v-else to="/" exact>
+                        <font-awesome-icon icon="home" />
+                        <span v-text="$t('global.menu.home')">Home</span>
+                    </span>
                 </b-nav-item>
-                <b-nav-item to="/start-test" exact>
+                <b-nav-item v-if="isInHomePage()" to="/survey" exact>
                     <span>
                         <span v-text="$t('global.menu.startTest')"></span>
                     </span>
                 </b-nav-item>
-                <b-nav-item>
+                <b-nav-item v-if="isInHomePage()">
                     <a v-smooth-scroll href="#aboutModal">
                         <span v-text="$t('global.menu.aboutModal')">About The Modal</span>
                     </a>
                 </b-nav-item>
-                <b-nav-item>
+                <b-nav-item v-if="isInHomePage()">
                     <a v-smooth-scroll href="#benefitForSmes">
                         <span v-text="$t('global.menu.benefitForSmes')">Benefits for SMEs</span>
                     </a>
                 </b-nav-item>
-                <b-nav-item>
+                <b-nav-item v-if="isInHomePage()">
                     <a v-smooth-scroll href="#teamVideos">
                         <span v-text="$t('global.menu.videos')">Team Videos</span>
                     </a>

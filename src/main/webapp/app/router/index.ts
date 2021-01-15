@@ -9,10 +9,12 @@ import Router from 'vue-router';
 
 const Home = () => import('@/core/home/home.vue');
 const Error = () => import('@/core/error/error.vue');
+const Survey = () => import('@/core/survey/survey.vue');
 import account from '@/router/account.ts';
 import admin from '@/router/admin.ts';
 import entities from '@/router/entities.ts';
 import pages from '@/router/pages.ts';
+import SurveyComponent from '@/core/survey/survey.component';
 
 Vue.use(Router);
 
@@ -24,6 +26,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/survey',
+      name: 'Survey',
+      component: Survey
     },
     {
       path: '/forbidden',
