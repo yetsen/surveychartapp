@@ -1,10 +1,10 @@
 import Component from 'vue-class-component';
 import { Inject, Vue } from 'vue-property-decorator';
 import LoginService from '@/account/login.service';
-import AboutModal from '@/core/aboutModal/about-modal';
-import BenefitForSmes from '@/core/benefitForSmes/benefit-for-smes';
-import TeamVideos from '@/core/teamVideos/team-videos';
-import ProjectDescription from '@/core/project-description/project-description';
+import AboutModal from '@/core/aboutModal/about-modal.vue';
+import BenefitForSmes from '@/core/benefitForSmes/benefit-for-smes.vue';
+import TeamVideos from '@/core/teamVideos/team-videos.vue';
+import ProjectDescription from '@/core/project-description/project-description.vue';
 
 @Component({
   components: {

@@ -18,9 +18,14 @@
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
                 <b-nav-item to="/" exact>
-                    <span>
+                    <a v-smooth-scroll href="#app">
                         <font-awesome-icon icon="home" />
                         <span v-text="$t('global.menu.home')">Home</span>
+                    </a>
+                </b-nav-item>
+                <b-nav-item to="/start-test" exact>
+                    <span>
+                        <span v-text="$t('global.menu.startTest')"></span>
                     </span>
                 </b-nav-item>
                 <b-nav-item>

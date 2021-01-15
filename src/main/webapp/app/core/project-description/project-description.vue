@@ -1,5 +1,5 @@
 <template>
-    <header class="masthead">
+    <header id="projectDescription" class="project-description">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
                 <h1 class="font-weight-dark">Project Description</h1>
