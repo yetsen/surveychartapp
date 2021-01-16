@@ -87,7 +87,7 @@ Survey['cssType'] = 'bootstrap';
             },
             {
               type: 'radiogroup',
-              name: 'question2',
+              name: 'EnglishLevel',
               title: 'How would you describe your understanding and fluency in English?',
               hideNumber: true,
               isRequired: true,
@@ -115,10 +115,11 @@ Survey['cssType'] = 'bootstrap';
         },
         {
           name: 'SmeScreening',
+          title: 'SmeScreening',
           elements: [
             {
               type: 'radiogroup',
-              name: 'question3',
+              name: 'WorkplaceSize',
               title: 'Please indicate if you currently work for a small or medium enterprise (SME)?',
               description: 'Note: a small or medium enterprise is defined as companies employing less than 250 people',
               isRequired: true,
@@ -131,6 +132,121 @@ Survey['cssType'] = 'bootstrap';
                 {
                   value: 'item2',
                   text: 'No',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Turnover',
+          title: 'Turnover',
+          elements: [
+            {
+              type: 'radiogroup',
+              name: 'WorkplaceSector',
+              title: 'Please indicate in the sector you work in?',
+              isRequired: true,
+              hideNumber: true,
+              choices: [
+                {
+                  value: 'item1',
+                  text: 'Agriculture Forestry and Fishing',
+                },
+                {
+                  value: 'item2',
+                  text: 'Mining and Quarrying',
+                },
+                {
+                  value: 'item3',
+                  text: 'Mining and Quarrying',
+                },
+                {
+                  value: 'item4',
+                  text: 'Manufacturing',
+                },
+                {
+                  value: 'item5',
+                  text: 'Electricity Gas Steam and Air Conditioning',
+                },
+                {
+                  value: 'item6',
+                  text: 'Water Supply Sewerage Waste',
+                },
+              ],
+            },
+            {
+              type: 'radiogroup',
+              name: 'VietnameseDong',
+              title: 'Please indicate the estimated annual turnover of your company (Vietnamese Dong)',
+              isRequired: true,
+              hideNumber: true,
+              choices: [
+                {
+                  value: 'item1',
+                  text: 'less than 300,000.000',
+                },
+                {
+                  value: 'item2',
+                  text: 'between 300,000.001 and 600,000.000',
+                },
+                {
+                  value: 'item3',
+                  text: 'between 600,000.001 and 1,200,000,000',
+                },
+                {
+                  value: 'item4',
+                  text: 'between 1,200,000,001 and 3,200,000,000',
+                },
+                {
+                  value: 'item5',
+                  text: 'between 3,200,000,001 and 6,200,000,000',
+                },
+                {
+                  value: 'item6',
+                  text: 'between 6,200,000,001 and 12,200,000,000',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Employment',
+          title: 'Employment',
+          elements: [
+            {
+              type: 'text',
+              name: 'EmployedRole',
+              title: 'Please indicate your role/ designation in the SME (organisation) you are employed',
+              placeHolder: 'Enter Here...',
+              isRequired: true,
+              hideNumber: true,
+            },
+            {
+              type: 'radiogroup',
+              name: 'ManagementRole',
+              title: 'Please indicate if your role involve managing other people',
+              isRequired: true,
+              hideNumber: true,
+              choices: [
+                {
+                  value: 'item1',
+                  text: 'Always',
+                },
+                {
+                  value: 'item2',
+                  text: 'Most of the time',
+                },
+                {
+                  value: 'item3',
+                  text: 'About half the time',
+                },
+                {
+                  value: 'item4',
+                  text: 'Sometimes',
+                },
+                {
+                  value: 'item5',
+                  text: 'Never',
                 },
               ],
             },
