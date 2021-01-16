@@ -4,12 +4,14 @@ import LoginService from '@/account/login.service';
 import AboutModel from '@/core/home/aboutModel/about-model.vue';
 import TeamVideos from '@/core/home/teamVideos/team-videos.vue';
 import ProjectDescription from '@/core/home/project-description/project-description.vue';
+import Contact from '@/core/home/contact/contact.vue';
 
 @Component({
   components: {
     aboutModel: AboutModel,
     teamVideos: TeamVideos,
     projectDescription: ProjectDescription,
+    contact: Contact,
   },
 })
 export default class Home extends Vue {

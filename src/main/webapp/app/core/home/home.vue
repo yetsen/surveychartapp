@@ -3,6 +3,7 @@
         <projectDescription></projectDescription>
         <aboutModel></aboutModel>
         <teamVideos></teamVideos>
+        <contact></contact>
     </span>
 </template>
 
