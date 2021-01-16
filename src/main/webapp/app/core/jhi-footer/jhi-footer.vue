@@ -1,7 +1,7 @@
 <template>
-    <div id="footer" class="footer">
+    <footer id="footer" class="footer">
         <p v-text="$t('footer')">This is your footer</p>
-    </div>
+    </footer>
 </template>
 
 <script lang="ts" src="./jhi-footer.component.ts">
@@ -9,6 +9,9 @@
 
 <style scoped>
     .footer {
-        text-align: left;
+        position: sticky;
+        background-color: white;
+        width: 100%;
+        height: 2.5rem;
     }
 </style>
