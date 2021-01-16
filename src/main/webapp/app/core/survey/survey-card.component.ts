@@ -5,7 +5,7 @@ import * as SurveyVue from 'survey-vue';
 SurveyVue.StylesManager.applyTheme('modern');
 
 let Survey = SurveyVue.Survey;
-Survey.cssType = 'bootstrap';
+Survey['cssType'] = 'bootstrap';
 
 @Component({
   name: 'surveyCard',

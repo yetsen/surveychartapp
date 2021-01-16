@@ -8,7 +8,3 @@
 
 <script lang="ts" src="./survey-card.component.ts">
 </script>
-<style scoped>
-.survey-page {
-}
-</style>
