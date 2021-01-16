@@ -2,7 +2,7 @@
     <b-navbar toggleable="md" type="dark" class="bg-primary" sticky>
         <b-navbar-brand class="logo" b-link to="/">
             <span class="logo-img"></span>
-            <span v-text="$t('global.title')" class="navbar-title">surveyChartApp</span> <span class="navbar-version">{{version}}</span>
+            <span v-text="$t('global.title')" class="navbar-title">surveyChartApp</span>
         </b-navbar-brand>
         <b-navbar-toggle
         right
@@ -29,6 +29,7 @@
                 </b-nav-item>
                 <b-nav-item v-if="isInHomePage()" to="/survey" exact>
                     <span>
+                        <font-awesome-icon icon="pen" />
                         <span v-text="$t('global.menu.startTest')"></span>
                     </span>
                 </b-nav-item>

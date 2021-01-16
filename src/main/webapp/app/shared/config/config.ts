@@ -39,6 +39,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons/faUserPlus';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faWrench } from '@fortawesome/free-solid-svg-icons/faWrench';
+import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
 
 import VueCookie from 'vue-cookie';
 import Vuelidate from 'vuelidate';
@@ -122,7 +123,8 @@ export function initFortAwesome(vue) {
     faTrash,
     faUser,
     faUserPlus,
-    faWrench
+    faWrench,
+    faPen
   );
 }
 
