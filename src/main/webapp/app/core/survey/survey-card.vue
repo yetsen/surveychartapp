@@ -22,5 +22,9 @@
 
 <script lang="ts" src="./survey-card.component.ts">
 </script>
-<script lang="scss" src="./survey-card.scss">
-</script>
+<style scoped>
+.survey-page {
+    height: 75vh;
+    min-height: 500px;
+}
+</style>
