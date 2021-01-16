@@ -252,6 +252,116 @@ Survey['cssType'] = 'bootstrap';
             },
           ],
         },
+        {
+          name: 'Design, Procure, Manufacture and Consume',
+          title: 'Design, Procure, Manufacture and Consume',
+          elements: [
+            {
+              type: 'matrix',
+              name: 'Matrix1',
+              title:
+                'Please indicate your level of agreement with the following statements in the context of the business practices [design] in the organisation where you are employed',
+              isRequired: true,
+              hideNumber: true,
+              columns: [
+                {
+                  value: 1,
+                  text: 'Strongly Disagree',
+                },
+                {
+                  value: 2,
+                  text: 'Disagree',
+                },
+                {
+                  value: 3,
+                  text: 'Neutral',
+                },
+                {
+                  value: 4,
+                  text: 'Agree',
+                },
+                {
+                  value: 5,
+                  text: 'Strongly Agree',
+                },
+              ],
+              rows: [
+                {
+                  value: 'item1',
+                  text: 'Our product designs aim to extend the product life and promote extended use/reuse of materials and products',
+                },
+                {
+                  value: 'item2',
+                  text: 'Our product designs consider regenerative/bio-degradable materials',
+                },
+                {
+                  value: 'item3',
+                  text: 'We aim to design our products for reuse, recycle and remanufacture',
+                },
+                {
+                  value: 'item4',
+                  text: 'Our product designs consider eco-friendly manufacturing practises',
+                },
+                {
+                  value: 'item5',
+                  text: 'Our product design considers complete elimination of hazardous products',
+                },
+              ],
+            },
+            {
+              type: 'matrix',
+              name: 'Matrix2',
+              title:
+                'Please indicate your level of agreement with the following statements in the context of the business practices [procurement] in the organisation where you are employed',
+              isRequired: true,
+              hideNumber: true,
+              columns: [
+                {
+                  value: 1,
+                  text: 'Strongly Disagree',
+                },
+                {
+                  value: 2,
+                  text: 'Disagree',
+                },
+                {
+                  value: 3,
+                  text: 'Neutral',
+                },
+                {
+                  value: 4,
+                  text: 'Agree',
+                },
+                {
+                  value: 5,
+                  text: 'Strongly Agree',
+                },
+              ],
+              rows: [
+                {
+                  value: 'item1',
+                  text: 'We rate our suppliers’ compliances with environmental legislation',
+                },
+                {
+                  value: 'item2',
+                  text: 'We apply environmental criteria in the selection of suppliers along with quality, cost and time',
+                },
+                {
+                  value: 'item3',
+                  text: 'We provide design specifications to suppliers with environmental requirements',
+                },
+                {
+                  value: 'item4',
+                  text: 'We apply social criteria in the selection of suppliers along with quality, cost and time',
+                },
+                {
+                  value: 'item5',
+                  text: 'We evaluate environmental risk and responsibilities with suppliers',
+                },
+              ],
+            },
+          ],
+        },
       ],
     };
     let model = new SurveyVue.Model(json);
