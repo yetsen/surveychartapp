@@ -12,8 +12,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <surveyVue :survey='$data.surveyData'></surveyVue>
-                    <div id="surveyResult"></div>
+                    <survey :survey='$data.survey'></survey>
                 </div>
             </div>
 
@@ -21,7 +20,7 @@
     </div>
 </template>
 
-<script lang="ts" src="./survey.component.ts">
+<script lang="ts" src="./survey-card.component.ts">
 </script>
-<script lang="scss" src="./survey.scss">
+<script lang="scss" src="./survey-card.scss">
 </script>

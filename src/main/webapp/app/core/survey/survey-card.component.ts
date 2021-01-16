@@ -1,13 +1,14 @@
 import Component from 'vue-class-component';
 import { Vue } from 'vue-property-decorator';
-import SurveyVue from 'survey-vue';
+import * as SurveyVue from 'survey-vue';
 
 SurveyVue.StylesManager.applyTheme('modern');
 
-let surveyVue = SurveyVue.Survey;
+let Survey = SurveyVue.Survey;
 @Component({
+  name: 'surveyCard',
   components: {
-    surveyVue: surveyVue,
+    Survey,
   },
   data() {
     let json = {
@@ -61,8 +62,8 @@ let surveyVue = SurveyVue.Survey;
     };
     let model = new SurveyVue.Model(json);
     return {
-      surveyData: model,
+      survey: model,
     };
   },
 })
-export default class SurveyComponent extends Vue {}
+export default class SurveyCardComponent extends Vue {}
