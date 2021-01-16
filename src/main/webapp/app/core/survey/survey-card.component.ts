@@ -18,96 +18,121 @@ Survey['cssType'] = 'bootstrap';
       showProgressBar: 'top',
       pages: [
         {
-          questions: [
+          name: 'Introduction',
+          elements: [
             {
-              type: 'matrix',
-              name: 'Quality',
-              title: 'Please indicate if you agree or disagree with the following statements',
-              columns: [
-                {
-                  value: 1,
-                  text: 'Strongly Disagree',
-                },
-                {
-                  value: 2,
-                  text: 'Disagree',
-                },
-                {
-                  value: 3,
-                  text: 'Neutral',
-                },
-                {
-                  value: 4,
-                  text: 'Agree',
-                },
-                {
-                  value: 5,
-                  text: 'Strongly Agree',
-                },
-              ],
-              rows: [
-                {
-                  value: 'affordable',
-                  text: 'Product is affordable',
-                },
-                {
-                  value: 'does what it claims',
-                  text: 'Product does what it claims',
-                },
-                {
-                  value: 'better then others',
-                  text: 'Product is better than other products on the market',
-                },
-                {
-                  value: 'easy to use',
-                  text: 'Product is easy to use',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          questions: [
-            {
-              type: 'radiogroup',
-              name: 'price to competitors',
-              title: 'Compared to our competitors, do you feel the Product is',
-              choices: ['Less expensive', 'Priced about the same', 'More expensive', 'Not sure'],
-            },
-            {
-              type: 'radiogroup',
-              name: 'price',
-              title: 'Do you feel our current price is merited by our product?',
+              type: 'checkbox',
+              name: 'ConsentForm',
+              title: 'Please click on each statement to confirm that you agree before you proceed to the survey.',
+              hideNumber: true,
+              isRequired: true,
               choices: [
-                'correct|Yes, the price is about right',
-                'low|No, the price is too low for your product',
-                'high|No, the price is too high for your product',
+                {
+                  value: 'item1',
+                  text:
+                    'I understand that my participation is voluntary and that I am free to withdraw at any time, without giving any reason and without my legal rights being affected. ',
+                  enableIf: '{ConsentForm} = []',
+                },
+                {
+                  value: 'item2',
+                  text:
+                    'I understand that if during the study I tell the research team something that causes them to have concerns in relation to my health and/or welfare they may need to breach my confidentiality.',
+                  enableIf: '{ConsentForm} = []',
+                },
+                {
+                  value: 'item3',
+                  text: 'I agree to my anonymised data being used by research teams for future research.',
+                  enableIf: '{ConsentForm} = []',
+                },
+                {
+                  value: 'item4',
+                  text: 'I agree to take part in this study.',
+                  enableIf: '{ConsentForm} = []',
+                },
+              ],
+              hasSelectAll: true,
+            },
+          ],
+          title: 'Introduction',
+          description:
+            'Aim of the study is to understand the circular economy practices employed in your organisation. Please answer the following questions based on your views and perspectives about your organisational practices and policies.  The collected data will be used only for the research purposes and will not be shared. Thank you for your time and valuable insights. ',
+        },
+        {
+          name: 'Screening',
+          elements: [
+            {
+              type: 'dropdown',
+              name: 'Country',
+              title: 'In which country do you currently reside?',
+              hideNumber: true,
+              isRequired: true,
+              choices: [
+                {
+                  value: 'item1',
+                  text: 'Afghanistan',
+                },
+                {
+                  value: 'item2',
+                  text: 'United Kingdom',
+                },
+                {
+                  value: 'item3',
+                  text: 'Vietnam',
+                },
+                {
+                  value: 'item4',
+                  text: 'Zimbabwe ',
+                },
               ],
             },
             {
-              type: 'multipletext',
-              name: 'pricelimit',
-              title: 'What is the... ',
-              items: [
+              type: 'radiogroup',
+              name: 'question2',
+              title: 'How would you describe your understanding and fluency in English?',
+              hideNumber: true,
+              isRequired: true,
+              choices: [
                 {
-                  name: 'mostamount',
-                  title: 'Most amount you would every pay for a product like ours',
+                  value: 'item1',
+                  text: 'I understand it very well',
                 },
                 {
-                  name: 'leastamount',
-                  title: 'The least amount you would feel comfortable paying',
+                  value: 'item2',
+                  text: 'I understand it well',
+                },
+                {
+                  value: 'item3',
+                  text: 'I have some understanding ',
+                },
+                {
+                  value: 'item4',
+                  text: "I don't really understand it",
                 },
               ],
             },
           ],
+          title: 'Screening',
         },
         {
-          questions: [
+          name: 'SmeScreening',
+          elements: [
             {
-              type: 'text',
-              name: 'email',
-              title:
-                "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button.",
+              type: 'radiogroup',
+              name: 'question3',
+              title: 'Please indicate if you currently work for a small or medium enterprise (SME)?',
+              description: 'Note: a small or medium enterprise is defined as companies employing less than 250 people',
+              isRequired: true,
+              hideNumber: true,
+              choices: [
+                {
+                  value: 'item1',
+                  text: 'Yes',
+                },
+                {
+                  value: 'item2',
+                  text: 'No',
+                },
+              ],
             },
           ],
         },
