@@ -13,5 +13,5 @@
 
 <script lang="ts" src="./team-videos.component.ts">
 </script>
-<script lang="scss" src="./team-videos.scss">
-</script>
+<style lang="scss" src="./team-videos.scss">
+</style>

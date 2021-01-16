@@ -33,18 +33,18 @@
                     </span>
                 </b-nav-item>
                 <b-nav-item v-if="isInHomePage()">
-                    <a v-smooth-scroll href="#aboutModal">
-                        <span v-text="$t('global.menu.aboutModal')">About The Modal</span>
-                    </a>
-                </b-nav-item>
-                <b-nav-item v-if="isInHomePage()">
-                    <a v-smooth-scroll href="#benefitForSmes">
-                        <span v-text="$t('global.menu.benefitForSmes')">Benefits for SMEs</span>
+                    <a v-smooth-scroll href="#aboutModel">
+                        <span v-text="$t('global.menu.aboutModel')">About The Model</span>
                     </a>
                 </b-nav-item>
                 <b-nav-item v-if="isInHomePage()">
                     <a v-smooth-scroll href="#teamVideos">
-                        <span v-text="$t('global.menu.videos')">Team Videos</span>
+                        <span v-text="$t('global.menu.projectTeam')">Project Team</span>
+                    </a>
+                </b-nav-item>
+                <b-nav-item v-if="isInHomePage()">
+                    <a v-smooth-scroll href="#contact">
+                        <span v-text="$t('global.menu.contact')">Contact</span>
                     </a>
                 </b-nav-item>
                 <b-nav-item-dropdown

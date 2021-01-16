@@ -1,8 +1,7 @@
 <template>
     <span class="container">
         <projectDescription></projectDescription>
-        <aboutModal></aboutModal>
-        <benefitForSmes></benefitForSmes>
+        <aboutModel></aboutModel>
         <teamVideos></teamVideos>
     </span>
 </template>

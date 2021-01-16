@@ -1,7 +1,7 @@
 <template>
-    <section id="aboutModal">
+    <section id="aboutModel">
         <div class="one-page">
-            <h2 class="text-center">About The Modal</h2>
+            <h2 class="text-center">About The Model</h2>
             <p class="text-muted mb-5 text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
             <div class="row">
                 <div class="col-sm-6 col-lg-4 mb-3 text-center">
@@ -45,7 +45,7 @@
     </section>
 </template>
 
-<script lang="ts" src="./about-modal.component.ts">
+<script lang="ts" src="./about-model.component.ts">
 </script>
-<script lang="scss" src="./about-modal.scss">
-</script>
+<style lang="scss" src="./about-model.scss">
+</style>

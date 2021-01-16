@@ -11,5 +11,5 @@
 
 <script lang="ts" src="./project-description.component.ts">
 </script>
-<script lang="scss" src="./project-description.scss">
-</script>
+<style lang="scss" src="./project-description.scss">
+</style>
