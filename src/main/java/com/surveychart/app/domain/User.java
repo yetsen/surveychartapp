@@ -91,14 +91,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private Set<Authority> authorities = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany
-    @JoinTable(
-        name = "user_choice",
-        joinColumns = {@JoinColumn(name = "choice_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
-    private Set<Choice> choices = new HashSet<>();
-
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     private Set<PersistentToken> persistentTokens = new HashSet<>();
 

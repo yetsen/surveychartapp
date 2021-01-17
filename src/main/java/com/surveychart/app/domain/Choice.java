@@ -22,6 +22,10 @@ public class Choice extends AbstractAuditingEntity implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Size (max = 255)
+    @Column(name = "value")
+    private String value;
+
     @Size (max = 4000)
     @Column (name = "text", length = 4000)
     private String text;

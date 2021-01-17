@@ -1,6 +1,7 @@
 package com.surveychart.app.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.surveychart.app.enums.QuestionType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,17 +26,22 @@ public class Question extends AbstractAuditingEntity implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Size (max = 255)
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    private QuestionType type;
+
     @Size (max = 4000)
     @Column(name = "title", length = 4000)
     private String title;
 
     @JsonIgnore
-    @OneToMany
-    @JoinTable(
-        name = "question_choice",
-        joinColumns = {@JoinColumn(name = "choice_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "question_id", referencedColumnName = "id")})
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<Choice> choices = new HashSet<>();
+
+    @JsonIgnore
+    @ManyToOne
+    private Block block;
 
 
 }

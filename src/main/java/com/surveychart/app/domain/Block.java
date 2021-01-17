@@ -34,11 +34,7 @@ public class Block extends AbstractAuditingEntity implements Serializable {
     private String description;
 
     @JsonIgnore
-    @OneToMany
-    @JoinTable(
-        name = "block_question",
-        joinColumns = {@JoinColumn(name = "question_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")})
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "block")
     private Set<Question> questions = new HashSet<>();
 
 }
