@@ -1,2 +1,2 @@
 id;name;title;type;created_by;last_modified_by;block_id
-1;ConsentForm;Please click on each statement to confirm that you agree before you proceed to the survey.;checkbox;system;system;1
+1;ConsentForm;Please click on each statement to confirm that you agree before you proceed to the survey.;CHECKBOX;system;system;1

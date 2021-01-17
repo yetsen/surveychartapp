@@ -1,7 +1,7 @@
 <template>
     <div class="survey-page">
         <div class="container">
-            <survey :survey='$data.survey'></survey>
+            <survey :survey='survey'></survey>
         </div>
     </div>
 </template>

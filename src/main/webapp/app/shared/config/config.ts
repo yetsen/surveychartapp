@@ -49,6 +49,7 @@ import * as filters from '@/shared/date/filters';
 import { accountStore } from '@/shared/config/store/account-store';
 import { alertStore } from '@/shared/config/store/alert-store';
 import { translationStore } from '@/shared/config/store/translation-store';
+import { surveyStore } from '@/shared/config/store/survey-store';
 
 const dateTimeFormats = {
   en: {
@@ -144,6 +145,7 @@ export function initVueXStore(vue) {
       accountStore,
       alertStore,
       translationStore,
+      surveyStore,
     },
   });
 }
