@@ -1,7 +1,6 @@
 import Component from 'vue-class-component';
 import { Vue, Inject } from 'vue-property-decorator';
 import * as SurveyVue from 'survey-vue';
-import LoginService from '@/account/login.service';
 import SurveyService from '@/core/survey.service';
 
 SurveyVue.StylesManager.applyTheme('modern');
@@ -21,7 +20,6 @@ export default class SurveyCardComponent extends Vue {
 
   get survey() {
     let json = this.$store.getters.survey;
-    console.log(json);
     return new SurveyVue.Model(json);
   }
 }

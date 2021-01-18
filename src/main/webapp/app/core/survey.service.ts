@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import axios, { AxiosPromise } from 'axios';
 import { Store } from 'vuex';
 
