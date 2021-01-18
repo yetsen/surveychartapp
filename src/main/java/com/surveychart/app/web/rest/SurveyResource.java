@@ -1,10 +1,13 @@
 package com.surveychart.app.web.rest;
 
 import com.surveychart.app.service.SurveyService;
+import com.surveychart.app.service.dto.AnswerDTO;
 import com.surveychart.app.service.dto.SurveyDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping ("/api/survey")
@@ -25,7 +28,7 @@ public class SurveyResource {
 
     @PostMapping
     @ResponseStatus (HttpStatus.CREATED)
-    public void post() {
-
+    public void post(@RequestBody List<AnswerDTO> answers) {
+        surveyService.putAnswers(answers);
     }
 }
