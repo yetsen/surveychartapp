@@ -13,18 +13,32 @@ Survey['cssType'] = 'bootstrap';
   components: {
     Survey,
   },
-  data() {
-    let json = this.$store.getters.survey;
-    (window as any).survey = new SurveyVue.Model(json);
-    (window as any).survey.onComplete.add(function (result) {
-      document.querySelector('#surveyResult').textContent = 'Result JSON:\n' + JSON.stringify(result.data, null, 3);
-    });
-    return {
-      survey: (window as any).survey,
-    };
-  },
 })
 export default class SurveyCardComponent extends Vue {
   @Inject('surveyService')
   private surveyService: () => SurveyService;
+
+  data() {
+    let json = this.$store.getters.survey;
+    (window as any).survey = new SurveyVue.Model(json);
+    let that = this;
+    (window as any).survey.onCurrentPageChanged.add(function (model, options) {
+      that.pushCurrentSurveyData(model.data);
+    });
+    return {
+      survey: (window as any).survey,
+    };
+  }
+
+  pushCurrentSurveyData(surveyData: any) {
+    let userId = this.$store.getters.account.id;
+    this.surveyService()
+      .push(surveyData)
+      .then(() => {
+        console.log('success');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 }

@@ -15,4 +15,8 @@ export default class SurveyService {
   public get(): AxiosPromise<any> {
     return axios.get('api/survey');
   }
+
+  public push(survey: any): Promise<any> {
+    return axios.post('api/survey', survey);
+  }
 }
