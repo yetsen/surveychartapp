@@ -15,10 +15,12 @@ Survey['cssType'] = 'bootstrap';
   },
   data() {
     let json = this.$store.getters.survey;
-    console.log(json);
-    let model = new SurveyVue.Model(json);
+    (window as any).survey = new SurveyVue.Model(json);
+    (window as any).survey.onComplete.add(function (result) {
+      document.querySelector('#surveyResult').textContent = 'Result JSON:\n' + JSON.stringify(result.data, null, 3);
+    });
     return {
-      survey: model,
+      survey: (window as any).survey,
     };
   },
 })

@@ -2,6 +2,7 @@
     <div class="survey-page">
         <div class="container">
             <survey :survey='survey'></survey>
+            <div id="surveyResult"></div>
         </div>
     </div>
 </template>
