@@ -13,14 +13,16 @@ Survey['cssType'] = 'bootstrap';
   components: {
     Survey,
   },
+  data() {
+    let json = this.$store.getters.survey;
+    console.log(json);
+    let model = new SurveyVue.Model(json);
+    return {
+      survey: model,
+    };
+  },
 })
 export default class SurveyCardComponent extends Vue {
   @Inject('surveyService')
   private surveyService: () => SurveyService;
-
-  get survey() {
-    let json = this.$store.getters.survey;
-    console.log(json);
-    return new SurveyVue.Model(json);
-  }
 }

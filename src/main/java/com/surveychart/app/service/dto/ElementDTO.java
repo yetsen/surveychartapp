@@ -1,5 +1,6 @@
 package com.surveychart.app.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surveychart.app.domain.Question;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class ElementDTO {
     private String name;
     private String title;
     private boolean hideNumber;
+    @JsonProperty (value="isRequired")
     private boolean isRequired;
     List<ChoiceDTO> choices;
 
