@@ -4,7 +4,9 @@ import lombok.Getter;
 
 @Getter
 public enum QuestionType {
-    CHECKBOX("checkbox");
+    CHECKBOX("checkbox"),
+    DROPDOWN("dropdown"),
+    RADIOGROUP("radiogroup");
 
     private String value;
 

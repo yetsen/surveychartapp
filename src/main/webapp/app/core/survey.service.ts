@@ -8,7 +8,6 @@ export default class SurveyService {
 
   public init(): void {
     this.get().then(res => {
-      console.log(res);
       this.store.commit('setSurvey', res.data);
     });
   }

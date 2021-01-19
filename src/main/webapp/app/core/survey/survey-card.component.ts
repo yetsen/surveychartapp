@@ -20,6 +20,7 @@ export default class SurveyCardComponent extends Vue {
 
   get survey() {
     let json = this.$store.getters.survey;
+    console.log(json);
     return new SurveyVue.Model(json);
   }
 }

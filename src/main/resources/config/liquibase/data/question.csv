@@ -1,2 +1,7 @@
 id;name;title;type;created_by;last_modified_by;block_id
 1;ConsentForm;Please click on each statement to confirm that you agree before you proceed to the survey.;CHECKBOX;system;system;1
+2;Country;In which country do you currently reside?;DROPDOWN;system;system;2
+3;EnglishLevel;How would you describe your understanding and fluency in English?;RADIOGROUP;system;system;2
+4;WorkplaceSize;Please indicate if you currently work for a small or medium enterprise (SME)?;RADIOGROUP;system;system;3
+5;WorkplaceSector;Please indicate in the sector you work in?;RADIOGROUP;system;system;4
+6;VietnameseDong;Please indicate the estimated annual turnover of your company (Vietnamese Dong);RADIOGROUP;system;system;4
