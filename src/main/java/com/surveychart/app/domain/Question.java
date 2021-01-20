@@ -43,5 +43,15 @@ public class Question extends AbstractAuditingEntity implements Serializable {
     @ManyToOne
     private Block block;
 
+    @Transient
+    private Long parentId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="parent_id")
+    private Question parent;
+
+    @OneToMany(mappedBy="parent", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true)
+    private Set<Question> children;
+
 
 }
