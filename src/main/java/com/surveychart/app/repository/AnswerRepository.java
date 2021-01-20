@@ -11,5 +11,7 @@ import java.util.Optional;
 @Repository
 public interface AnswerRepository extends JpaRepository<Answer, Long> {
 
-    Optional<Answer> findByUserAndQuestion(User user, Question question);
+    Optional<Answer> findByUserAndQuestionAndChoice_Value(User user, Question question, String choiceValue);
+
+    void deleteAnswersByUserAndQuestion(User user, Question question);
 }

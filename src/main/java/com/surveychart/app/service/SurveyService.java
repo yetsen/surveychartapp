@@ -55,13 +55,14 @@ public class SurveyService {
             Question question = Optional.of(questionRepository
                 .findByName(answerDTO.getQuestionName())).get().orElseThrow(RuntimeException::new);
 
-            Answer answer = Optional.of(answerRepository.findByUserAndQuestion(user, question))
-                .get()
-                .orElse(new Answer(user, question));
+            answerRepository.deleteAnswersByUserAndQuestion(user, question);
 
-            answer.setChoice(Optional.of(question.getChoices().stream()
+            Answer answer = new Answer(user, question);
+
+            answer.setChoice(Optional.ofNullable(question.getParent())
+                .orElse(question).getChoices().stream()
                 .filter(choice -> choice.getValue().equals(answerDTO.getChoiceValue()))
-                .findFirst()).get().orElseThrow(RuntimeException::new));
+                .findFirst().orElseThrow(RuntimeException::new));
 
             return answer;
         }).collect(Collectors.toList()));
