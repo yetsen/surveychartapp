@@ -7,6 +7,7 @@ import com.surveychart.app.domain.User;
 import com.surveychart.app.repository.*;
 import com.surveychart.app.service.dto.AnswerDTO;
 import com.surveychart.app.service.dto.SurveyDTO;
+import com.surveychart.app.service.dto.SurveyResultDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,6 +44,12 @@ public class SurveyService {
         return new SurveyDTO(blocks);
     }
 
+    public SurveyResultDTO getSurveyAnswers(Long userId) {
+        return convert(answerRepository.findByUser(
+            userRepository.findById(userId).orElseThrow(RuntimeException::new)
+        ).orElseThrow(RuntimeException::new));
+    }
+
     private List<Block> getAllBlocks() {
         return blockRepository.findAll();
     }
@@ -66,5 +73,9 @@ public class SurveyService {
 
             return answer;
         }).collect(Collectors.toList()));
+    }
+
+    public SurveyResultDTO convert(List<Answer> answers) {
+        return new SurveyResultDTO(answers);
     }
 }

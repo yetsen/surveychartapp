@@ -3,6 +3,7 @@ package com.surveychart.app.web.rest;
 import com.surveychart.app.service.SurveyService;
 import com.surveychart.app.service.dto.AnswerDTO;
 import com.surveychart.app.service.dto.SurveyDTO;
+import com.surveychart.app.service.dto.SurveyResultDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,13 @@ public class SurveyResource {
     public ResponseEntity<SurveyDTO> get() {
         SurveyDTO surveyDTO = surveyService.getSurveyData();
         return new ResponseEntity<>(surveyDTO, HttpStatus.OK);
+    }
+
+    @GetMapping("/answer/{userId}")
+    //@PreAuthorize ("hasAuthority(\"" + AuthoritiesConstants.USER + "\")")
+    public ResponseEntity<SurveyResultDTO> getAnswer(@PathVariable Long userId) {
+        SurveyResultDTO surveyResultDTO = surveyService.getSurveyAnswers(userId);
+        return new ResponseEntity<>(surveyResultDTO, HttpStatus.OK);
     }
 
     @PostMapping

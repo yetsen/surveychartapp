@@ -26,6 +26,13 @@ export default class SurveyCardComponent extends Vue {
     (window as any).survey.onCurrentPageChanged.add(function (model, options) {
       that.pushCurrentSurveyData(model.data);
     });
+    this.surveyService()
+      .getAnswer(this.userId())
+      .then(res => {
+        let result = { ...res.data['singleNode'], ...res.data['parentNode'] };
+        console.log(result);
+        (window as any).survey.data = result;
+      });
     return {
       survey: (window as any).survey,
     };
