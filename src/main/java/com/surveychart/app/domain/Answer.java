@@ -2,12 +2,14 @@ package com.surveychart.app.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table (name = "answer")
 @Data
+@NoArgsConstructor
 public class Answer {
 
     @Id
@@ -27,4 +29,8 @@ public class Answer {
     @ManyToOne
     private Choice choice;
 
+    public Answer (User user, Question question) {
+        this.user = user;
+        this.question = question;
+    }
 }

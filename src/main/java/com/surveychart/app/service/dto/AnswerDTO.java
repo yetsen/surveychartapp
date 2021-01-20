@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class AnswerDTO {
     private Long userId;
-    private Long questionId;
-    private Long choiceId;
+    private String questionName;
+    private String choiceValue;
 }

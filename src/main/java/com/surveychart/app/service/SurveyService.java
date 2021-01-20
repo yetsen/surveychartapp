@@ -2,6 +2,8 @@ package com.surveychart.app.service;
 
 import com.surveychart.app.domain.Answer;
 import com.surveychart.app.domain.Block;
+import com.surveychart.app.domain.Question;
+import com.surveychart.app.domain.User;
 import com.surveychart.app.repository.*;
 import com.surveychart.app.service.dto.AnswerDTO;
 import com.surveychart.app.service.dto.SurveyDTO;
@@ -47,13 +49,20 @@ public class SurveyService {
 
     public void putAnswers(List<AnswerDTO> answers) {
         answerRepository.saveAll(answers.stream().map(answerDTO -> {
-            Answer answer = new Answer();
-            answer.setUser(Optional.of(userRepository
-                .findById(answerDTO.getUserId())).get().orElseThrow(RuntimeException::new));
-            answer.setQuestion(Optional.of(questionRepository
-                .findById(answerDTO.getUserId())).get().orElseThrow(RuntimeException::new));
-            answer.setChoice(Optional.of(choiceRepository
-                .findById(answerDTO.getUserId())).get().orElseThrow(RuntimeException::new));
+            User user = Optional.of(userRepository
+                .findById(answerDTO.getUserId())).get().orElseThrow(RuntimeException::new);
+
+            Question question = Optional.of(questionRepository
+                .findByName(answerDTO.getQuestionName())).get().orElseThrow(RuntimeException::new);
+
+            Answer answer = Optional.of(answerRepository.findByUserAndQuestion(user, question))
+                .get()
+                .orElse(new Answer(user, question));
+
+            answer.setChoice(Optional.of(question.getChoices().stream()
+                .filter(choice -> choice.getValue().equals(answerDTO.getChoiceValue()))
+                .findFirst()).get().orElseThrow(RuntimeException::new));
+
             return answer;
         }).collect(Collectors.toList()));
     }
