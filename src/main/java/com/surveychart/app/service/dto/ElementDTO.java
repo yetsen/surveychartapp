@@ -2,6 +2,7 @@ package com.surveychart.app.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surveychart.app.domain.Question;
+import com.surveychart.app.enums.QuestionType;
 import lombok.Data;
 
 import java.util.List;
@@ -17,6 +18,8 @@ public class ElementDTO {
     @JsonProperty (value="isRequired")
     private boolean isRequired;
     List<ChoiceDTO> choices;
+    List<ChoiceDTO> columns;
+    List<ChoiceDTO> rows;
 
     ElementDTO(Question question) {
 
@@ -25,7 +28,13 @@ public class ElementDTO {
         this.title = question.getTitle();
         this.hideNumber = true;
         this.isRequired = true;
-        this.choices = question.getChoices().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+        if (!QuestionType.SUB_MATRIX.equals(question.getType())
+            && !QuestionType.MATRIX.equals(question.getType())) {
+            this.choices = question.getChoices().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+        } else if (QuestionType.MATRIX.equals(question.getType())) {
+            this.columns = question.getChoices().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+            this.rows = question.getChildren().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+        }
 
     }
 

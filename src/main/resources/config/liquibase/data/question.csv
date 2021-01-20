@@ -1,7 +1,13 @@
-id;name;title;type;created_by;last_modified_by;block_id
-1;ConsentForm;Please click on each statement to confirm that you agree before you proceed to the survey.;CHECKBOX;system;system;1
-2;Country;In which country do you currently reside?;DROPDOWN;system;system;2
-3;EnglishLevel;How would you describe your understanding and fluency in English?;RADIOGROUP;system;system;2
-4;WorkplaceSize;Please indicate if you currently work for a small or medium enterprise (SME)?;RADIOGROUP;system;system;3
-5;WorkplaceSector;Please indicate in the sector you work in?;RADIOGROUP;system;system;4
-6;VietnameseDong;Please indicate the estimated annual turnover of your company (Vietnamese Dong);RADIOGROUP;system;system;4
+id;name;title;type;created_by;last_modified_by;block_id;parent_id
+1;ConsentForm;Please click on each statement to confirm that you agree before you proceed to the survey.;CHECKBOX;system;system;1;
+2;Country;In which country do you currently reside?;DROPDOWN;system;system;2;
+3;EnglishLevel;How would you describe your understanding and fluency in English?;RADIOGROUP;system;system;2;
+4;WorkplaceSize;Please indicate if you currently work for a small or medium enterprise (SME)?;RADIOGROUP;system;system;3;
+5;WorkplaceSector;Please indicate in the sector you work in?;RADIOGROUP;system;system;4;
+6;VietnameseDong;Please indicate the estimated annual turnover of your company (Vietnamese Dong);RADIOGROUP;system;system;4;
+7;MatrixQ1;Please indicate your level of agreement with the following statements in the context of the business practices [design] in the organisation where you are employed;MATRIX;system;system;2;
+8;MatrixSQ1;Our product designs aim to extend the product life and promote extended use/reuse of materials and products;SUB_MATRIX;system;system;2;7
+9;MatrixSQ2;Our product designs consider regenerative/bio-degradable materials;SUB_MATRIX;system;system;2;7
+10;MatrixSQ3;We aim to design our products for reuse, recycle and remanufacture;SUB_MATRIX;system;system;2;7
+11;MatrixSQ4;Our product designs consider eco-friendly manufacturing practises;SUB_MATRIX;system;system;2;7
+12;MatrixSQ5;Our product design considers complete elimination of hazardous products;SUB_MATRIX;system;system;2;7

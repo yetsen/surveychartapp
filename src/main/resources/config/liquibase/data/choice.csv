@@ -203,3 +203,8 @@ id;name;text;value;created_by;last_modified_by
 202;;I understand it well;2;system;system
 203;;I have some understanding;3;system;system
 204;;I don't really understand it;4;system;system
+205;;Strongly Disagree;1;system;system
+206;;Disagree;2;system;system
+207;;Neutral;3;system;system
+208;;Agree;4;system;system
+209;;Strongly Agree;5;system;system
