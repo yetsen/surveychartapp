@@ -1,8 +1,10 @@
 package com.surveychart.app.service.dto;
 
 import com.surveychart.app.domain.Block;
+import com.surveychart.app.domain.Question;
 import lombok.Data;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,7 +20,9 @@ public class PageDTO {
         this.name = block.getName();
         this.title = block.getTitle();
         this.description = block.getDescription();
-        this.elements = block.getQuestions().stream().map(ElementDTO::new).collect(Collectors.toList());
+        this.elements = block.getQuestions().stream()
+            .sorted(Comparator.comparing(Question::getId))
+            .map(ElementDTO::new).collect(Collectors.toList());
 
     }
 }

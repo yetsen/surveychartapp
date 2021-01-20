@@ -1,10 +1,12 @@
 package com.surveychart.app.service.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.surveychart.app.domain.Choice;
 import com.surveychart.app.domain.Question;
 import com.surveychart.app.enums.QuestionType;
 import lombok.Data;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,10 +32,16 @@ public class ElementDTO {
         this.isRequired = true;
         if (!QuestionType.SUB_MATRIX.equals(question.getType())
             && !QuestionType.MATRIX.equals(question.getType())) {
-            this.choices = question.getChoices().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+            this.choices = question.getChoices().stream()
+                .sorted(Comparator.comparing(Choice::getId))
+                .map(ChoiceDTO::new).collect(Collectors.toList());
         } else if (QuestionType.MATRIX.equals(question.getType())) {
-            this.columns = question.getChoices().stream().map(ChoiceDTO::new).collect(Collectors.toList());
-            this.rows = question.getChildren().stream().map(ChoiceDTO::new).collect(Collectors.toList());
+            this.columns = question.getChoices().stream()
+                .sorted(Comparator.comparing(Choice::getId))
+                .map(ChoiceDTO::new).collect(Collectors.toList());
+            this.rows = question.getChildren().stream()
+                .sorted(Comparator.comparing(Question::getId))
+                .map(ChoiceDTO::new).collect(Collectors.toList());
         }
 
     }

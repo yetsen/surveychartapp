@@ -3,6 +3,7 @@ package com.surveychart.app.service.dto;
 import com.surveychart.app.domain.Block;
 import lombok.Data;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,7 @@ public class SurveyDTO {
         this.title = "Circular Economy Assessment";
         this.showProgressBar = "top";
         this.pages = blocks.stream()
+            .sorted(Comparator.comparing(Block::getId))
             .map(PageDTO::new)
             .collect(Collectors.toList());
     }

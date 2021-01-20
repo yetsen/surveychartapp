@@ -51,7 +51,7 @@ public class Question extends AbstractAuditingEntity implements Serializable {
     private Question parent;
 
     @OneToMany(mappedBy="parent", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true)
-    private Set<Question> children;
+    private Set<Question> children = new HashSet<>();
 
 
 }
