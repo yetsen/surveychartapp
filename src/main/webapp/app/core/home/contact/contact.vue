@@ -9,14 +9,14 @@
         <div class="row">
 
             <div class="col-sm-2 text-right">
-                <img  width="100" height="150" class="img-responsive">
+                <img src="https://research.aston.ac.uk/files-asset/5770742/Prasanta_Dey.jpg" width="100" height="150" class="img-responsive">
             </div>
             <div class="col-sm-10 text-left">
-                <h4>Liverpool FC</h4>
-                <p><strong>Jürgen Klopp</strong>
-                    <br>Manager
-                    <br>Email: <a href="mailto:jurgen.klopp@gmail.com">jurgen.klopp@gmail.com</a>
-                    <br>Phone: +1 111 111 11 11
+                <h4>Prasanta Dey</h4>
+                <p><strong>Aston Business School</strong>
+                    <br>Professor
+                    <br>Email: <a href="mailto:p.k.dey@aston.ac.uk">p.k.dey@aston.ac.uk</a>
+                    <br>Phone: +44(0)121 204 4011
                 </p>
             </div>
         </div>
@@ -24,29 +24,14 @@
         <br>
         <div class="row">
             <div class="col-sm-2 text-right">
-                <img  width="100" height="150" class="img-responsive">
+                <img src="https://research.aston.ac.uk/files-asset/29337137/Dr_Soumyadeb_Chowdhury.png" width="100" height="150" class="img-responsive">
             </div>
             <div class="col-sm-10 text-left">
-                <h4>Liverpool FC</h4>
-                <p><strong>Jürgen Klopp</strong>
-                    <br>Manager
-                    <br>Email: <a href="mailto:jurgen.klopp@gmail.com">jurgen.klopp@gmail.com</a>
-                    <br>Phone: +1 111 111 11 11
-                </p>
-            </div>
-        </div>
-        <br>
-
-        <div class="row">
-            <div class="col-sm-2 text-right">
-                <img  width="100" height="150" class="img-responsive">
-            </div>
-            <div class="col-sm-10 text-left">
-                <h4>Liverpool FC</h4>
-                <p><strong>Jürgen Klopp</strong>
-                    <br>Manager
-                    <br>Email: <a href="mailto:jurgen.klopp@gmail.com">jurgen.klopp@gmail.com</a>
-                    <br>Phone: +1 111 111 11 11
+                <h4>Soumyadeb Chowdhury</h4>
+                <p><strong>Aston Business School</strong>
+                    <br>Dr
+                    <br>Email: <a href="mailto:s.chowdhury5@aston.ac.uk">s.chowdhury5@aston.ac.uk</a>
+                    <br>Phone: +44(0)121 204 3088
                 </p>
             </div>
         </div>
