@@ -1,13 +1,38 @@
 <template>
     <section id="teamVideos">
-        <div class="one-page">
-            <h2 class="text-center">Team Videos</h2>
-            <div class="row">
-                <div class="col-xl-1"></div>
-                <div class="col-xl-10">
-                    <youtube player-width="960" player-height="480" video-id="PAnKl7862qc"></youtube>
-                </div>
-                <div class="col-xl-1"></div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Project Team</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-2 text-right">
+                <img src="https://research.aston.ac.uk/files-asset/5770742/Prasanta_Dey.jpg" width="100" height="150" class="img-responsive">
+            </div>
+            <div class="col-sm-10 text-left">
+                <h4>Prasanta Dey</h4>
+                <p><strong>Aston Business School</strong>
+                    <br>Professor
+                    <br>Email: <a href="mailto:p.k.dey@aston.ac.uk">p.k.dey@aston.ac.uk</a>
+                    <br>Phone: +44(0)121 204 4011
+                </p>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-sm-2 text-right">
+                <img src="https://research.aston.ac.uk/files-asset/29337137/Dr_Soumyadeb_Chowdhury.png" width="100" height="150" class="img-responsive">
+            </div>
+            <div class="col-sm-10 text-left">
+                <h4>Soumyadeb Chowdhury</h4>
+                <p><strong>Aston Business School</strong>
+                    <br>Dr
+                    <br>Email: <a href="mailto:s.chowdhury5@aston.ac.uk">s.chowdhury5@aston.ac.uk</a>
+                    <br>Phone: +44(0)121 204 3088
+                </p>
             </div>
         </div>
     </section>
@@ -15,5 +40,5 @@
 
 <script lang="ts" src="./team-videos.component.ts">
 </script>
-<style lang="scss" src="./team-videos.scss">
+<style lang="scss" src="./team-videos.scss" scoped>
 </style>
