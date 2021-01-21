@@ -1,8 +1,8 @@
 import Component from 'vue-class-component';
 import { Vue, Inject } from 'vue-property-decorator';
 import * as SurveyVue from 'survey-vue';
-import SurveyService from '@/core/survey.service';
-import { Answer } from '@/shared/model/answer.model';
+import SurveyService from '@/core/survey.service.ts';
+import { Answer } from '@/shared/model/answer.model.ts';
 
 SurveyVue.StylesManager.applyTheme('modern');
 
