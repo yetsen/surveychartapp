@@ -101,7 +101,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .permitAll()
         .and()
             .headers()
-            .contentSecurityPolicy("default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com https://www.youtube.com https://fonts.googleapis.com/ https://youtube.com https://research.aston.ac.uk/; style-src 'self' 'unsafe-inline'; frame-src 'self' data: https://www.youtube.com https://fonts.googleapis.com/ https://youtube.com https://research.aston.ac.uk/; img-src 'self' data:; font-src 'self' data:;")
+            .contentSecurityPolicy("default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com https://www.youtube.com https://fonts.googleapis.com/ https://youtube.com https://research.aston.ac.uk/; style-src 'self' 'unsafe-inline'; frame-src 'self' data: https://www.youtube.com https://fonts.googleapis.com/ https://youtube.com https://research.aston.ac.uk/; img-src 'self' data: https://research.aston.ac.uk/; font-src 'self' data:;")
         .and()
             .referrerPolicy(ReferrerPolicyHeaderWriter.ReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN)
         .and()
