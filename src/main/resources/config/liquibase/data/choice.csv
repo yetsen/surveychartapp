@@ -208,3 +208,22 @@ id;name;text;value;created_by;last_modified_by
 207;;Neutral;3;system;system
 208;;Agree;4;system;system
 209;;Strongly Agree;5;system;system
+210;;Yes;1;system;system
+211;;No;2;system;system
+212;;Agriculture Forestry and Fishing ;Agriculture Forestry and Fishing ;system;system
+213;;Mining and Quarrying ;Mining and Quarrying ;system;system
+214;;Manufacturing ;Manufacturing ;system;system
+215;;Electricity Gas Steam and Air Conditioning ;Electricity Gas Steam and Air Conditioning ;system;system
+216;;Water Supply Sewerage Waste ;Water Supply Sewerage Waste ;system;system
+217;;Construction ;Construction ;system;system
+218;;Wholesale and Retail Trade Motor Repair ;Wholesale and Retail Trade Motor Repair ;system;system
+219;;Transportation and Storage ;Transportation and Storage ;system;system
+220;;Information and Communication ;Information and Communication ;system;system
+221;;less than 300,000.000 ;less than 300,000.000 ;system;system
+222;;between 300,000.001 and 600,000.000 ;between 300,000.001 and 600,000.000 ;system;system
+223;;between 600,000.001 and 1,200,000,000 ;between 600,000.001 and 1,200,000,000 ;system;system
+224;;between 1,200,000,001 and 3,200,000,000 ;between 1,200,000,001 and 3,200,000,000 ;system;system
+225;;between 3,200,000,001 and 6,200,000,000 ;between 3,200,000,001 and 6,200,000,000 ;system;system
+226;;between 6,200,000,001 and 12,200,000,000 ;between 6,200,000,001 and 12,200,000,000 ;system;system
+227;;between 12,200,000,001 and 30,000,000,000 ;between 12,200,000,001 and 30,000,000,000 ;system;system
+228;;over 30,000,000,000 ;over 30,000,000,000 ;system;system
