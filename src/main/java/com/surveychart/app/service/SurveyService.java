@@ -63,9 +63,8 @@ public class SurveyService {
             Question question = Optional.of(questionRepository
                 .findByName(answerDTO.getQuestionName())).get().orElseThrow(RuntimeException::new);
 
-            answerRepository.deleteAnswersByUserAndQuestion(user, question);
-
-            Answer answer = new Answer(user, question);
+            Answer answer = answerRepository.findByUserAndQuestion(user, question)
+                .orElse(new Answer(user, question));
 
             if (question.getType().equals(QuestionType.TEXT)) {
                 answer.setCustomAnswer(answerDTO.getChoiceValue());

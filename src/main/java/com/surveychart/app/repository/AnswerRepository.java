@@ -14,6 +14,8 @@ public interface AnswerRepository extends JpaRepository<Answer, Long> {
 
     Optional<Answer> findByUserAndQuestionAndChoice_Value(User user, Question question, String choiceValue);
 
+    Optional<Answer> findByUserAndQuestion(User user, Question question);
+
     void deleteAnswersByUserAndQuestion(User user, Question question);
 
     Optional<List<Answer>> findByUser(User user);
