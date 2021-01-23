@@ -8,7 +8,8 @@ public enum QuestionType {
     DROPDOWN("dropdown"),
     RADIOGROUP("radiogroup"),
     MATRIX("matrix"),
-    SUB_MATRIX("submatrix");
+    SUB_MATRIX("submatrix"),
+    TEXT("text");
 
     private String value;
 
