@@ -63,8 +63,12 @@ public class SurveyService {
             Question question = Optional.of(questionRepository
                 .findByName(answerDTO.getQuestionName())).get().orElseThrow(RuntimeException::new);
 
-            Answer answer = answerRepository.findByUserAndQuestion(user, question)
-                .orElse(new Answer(user, question));
+            Answer answer = question.getType().equals(QuestionType.CHECKBOX) ?
+                answerRepository.findByUserAndQuestionAndChoice_Value(
+                    user, question, answerDTO.getChoiceValue())
+                    .orElse(new Answer(user, question))
+                : answerRepository.findByUserAndQuestion(user, question)
+                    .orElse(new Answer(user, question));
 
             if (question.getType().equals(QuestionType.TEXT)) {
                 answer.setCustomAnswer(answerDTO.getChoiceValue());
