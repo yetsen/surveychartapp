@@ -4,6 +4,7 @@ import com.surveychart.app.domain.Answer;
 import com.surveychart.app.domain.Block;
 import com.surveychart.app.domain.Question;
 import com.surveychart.app.domain.User;
+import com.surveychart.app.enums.QuestionType;
 import com.surveychart.app.repository.*;
 import com.surveychart.app.service.dto.AnswerDTO;
 import com.surveychart.app.service.dto.SurveyDTO;
@@ -65,6 +66,11 @@ public class SurveyService {
             answerRepository.deleteAnswersByUserAndQuestion(user, question);
 
             Answer answer = new Answer(user, question);
+
+            if (question.getType().equals(QuestionType.TEXT)) {
+                answer.setCustomAnswer(answerDTO.getChoiceValue());
+                return answer;
+            }
 
             answer.setChoice(Optional.ofNullable(question.getParent())
                 .orElse(question).getChoices().stream()

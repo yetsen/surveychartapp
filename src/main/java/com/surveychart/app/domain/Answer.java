@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table (name = "answer")
@@ -28,6 +29,10 @@ public class Answer {
     @JsonIgnore
     @ManyToOne
     private Choice choice;
+
+    @Size (max = 4000)
+    @Column(name = "customAnswer", length = 4000)
+    private String customAnswer;
 
     public Answer (User user, Question question) {
         this.user = user;

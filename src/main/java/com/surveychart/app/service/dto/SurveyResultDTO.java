@@ -1,6 +1,7 @@
 package com.surveychart.app.service.dto;
 
 import com.surveychart.app.domain.Answer;
+import com.surveychart.app.enums.QuestionType;
 import lombok.Data;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
@@ -19,7 +20,11 @@ public class SurveyResultDTO {
         answers.forEach(
             answer -> {
                 if (ObjectUtils.isEmpty(answer.getQuestion().getParent())) {
-                    singleNode.put(answer.getQuestion().getName(), answer.getChoice().getValue());
+                    if (answer.getQuestion().getType().equals(QuestionType.TEXT)) {
+                        singleNode.put(answer.getQuestion().getName(), answer.getCustomAnswer());
+                    } else {
+                        singleNode.put(answer.getQuestion().getName(), answer.getChoice().getValue());
+                    }
                 } else {
                     Map<String, String> node = parentNode.get(answer.getQuestion().getParent().getName());
                     if (CollectionUtils.isEmpty(node)) {
