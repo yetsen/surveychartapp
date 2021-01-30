@@ -3,6 +3,7 @@ import { Vue, Inject } from 'vue-property-decorator';
 import * as SurveyVue from 'survey-vue';
 import SurveyService from '@/core/survey.service.ts';
 import { Answer } from '@/shared/model/answer.model.ts';
+import Showdown from 'showdown';
 
 SurveyVue.StylesManager.applyTheme('modern');
 
@@ -28,6 +29,16 @@ export default class SurveyCardComponent extends Vue {
     });
     (window as any).survey.onComplete.add(function (model, options) {
       that.pushCurrentSurveyData(model.data);
+    });
+    let converter = new Showdown.Converter();
+    (window as any).survey.onTextMarkdown.add(function (survey, options) {
+      //convert the markdown text to html
+      let str = converter.makeHtml(options.text);
+      //remove root paragraphs <p></p>
+      str = str.substring(3);
+      str = str.substring(0, str.length - 4);
+      //set html
+      options.html = str;
     });
     this.surveyService()
       .getAnswer(this.userId())
