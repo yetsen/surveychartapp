@@ -40,6 +40,7 @@ export default class SurveyCardComponent extends Vue {
       //set html
       options.html = str;
     });
+    (window as any).survey.onValidateQuestion.add(this.surveyValidateQuestion);
     this.surveyService()
       .getAnswer(this.userId())
       .then(res => {
@@ -49,6 +50,14 @@ export default class SurveyCardComponent extends Vue {
     return {
       survey: (window as any).survey,
     };
+  }
+
+  surveyValidateQuestion(s, options) {
+    if (options.name === 'ConsentForm') {
+      if (options.value.length < 4) {
+        options.error = 'Your consent is required to go on survey.';
+      }
+    }
   }
 
   userId() {
