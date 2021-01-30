@@ -49,6 +49,10 @@
                                    v-if="!$v.resetPassword.newPassword.maxLength" v-text="$t('global.messages.validate.newpassword.maxlength')">
                                 Your password cannot be longer than 50 characters.
                             </small>
+                            <small class="form-text text-danger"
+                                   v-if="!$v.resetPassword.newPassword.valid" v-text="$t('global.messages.validate.newpassword.generalValidation')">
+                                Your password cannot be longer than 50 characters.
+                            </small>
                         </div>
                         <!--<jhi-password-strength-bar [passwordToCheck]="newPassword"></jhi-password-strength-bar>-->
                     </div>

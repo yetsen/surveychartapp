@@ -13,6 +13,12 @@ const validations = {
       required,
       minLength: minLength(4),
       maxLength: maxLength(254),
+      valid: function (value) {
+        const containsUppercase = /[A-Z]/.test(value);
+        const containsLowercase = /[a-z]/.test(value);
+        const containsNumber = /[0-9]/.test(value);
+        return containsUppercase && containsLowercase && containsNumber;
+      },
     },
     confirmPassword: {
       required,
