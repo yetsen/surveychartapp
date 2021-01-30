@@ -37,6 +37,16 @@
       },
       "language": "Language"
     },
+    "modal": {
+      "survey": {
+        "clearAndExit": {
+          "title": "Confirm Clear & Exit",
+          "question": "Are you sure you want to clear and exit the survey?",
+          "no": "No",
+          "yes": "Yes"
+        }
+      }
+    },
     "form": {
       "username.label": "Username",
       "username.placeholder": "Your username",

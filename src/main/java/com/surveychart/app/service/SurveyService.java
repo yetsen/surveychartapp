@@ -87,4 +87,10 @@ public class SurveyService {
     public SurveyResultDTO convert(List<Answer> answers) {
         return new SurveyResultDTO(answers);
     }
+
+    public void clearAnswers (Long userId) {
+        answerRepository.deleteAnswersByUser(
+            userRepository.findById(userId).orElseThrow(RuntimeException::new)
+        );
+    }
 }

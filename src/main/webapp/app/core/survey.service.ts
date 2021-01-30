@@ -21,6 +21,10 @@ export default class SurveyService {
     return axios.get('api/survey/answer/' + userId);
   }
 
+  public clearAnswer(userId): AxiosPromise<any> {
+    return axios.post('api/survey/clear/' + userId);
+  }
+
   public push(answer: Answer[]): Promise<any> {
     return axios.post('api/survey', answer);
   }

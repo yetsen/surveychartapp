@@ -6,6 +6,7 @@ import com.surveychart.app.service.dto.SurveyDTO;
 import com.surveychart.app.service.dto.SurveyResultDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,5 +39,11 @@ public class SurveyResource {
     @ResponseStatus (HttpStatus.CREATED)
     public void post(@RequestBody List<AnswerDTO> answers) {
         surveyService.putAnswers(answers);
+    }
+
+    @PostMapping("/clear/{userId}")
+    @ResponseStatus (HttpStatus.OK)
+    public void clearAnswers(@PathVariable Long userId) {
+        surveyService.clearAnswers(userId);
     }
 }

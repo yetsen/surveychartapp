@@ -22,15 +22,27 @@ export default class SurveyCardComponent extends Vue {
 
   data() {
     let json = this.$store.getters.survey;
+    json.showNavigationButtons = 'none';
+    json.showProgressBar = 'none';
     (window as any).survey = new SurveyVue.Model(json);
     let that = this;
+
     (window as any).survey.onCurrentPageChanged.add(function (model, options) {
       that.pushCurrentSurveyData(model.data);
+      let currentPage = (window as any).survey.currentPageNo + 1;
+      let visiblePageCount = (window as any).survey.visiblePageCount;
+      that['progress'] = 100 * (currentPage / visiblePageCount) + '%';
+      that['pageNumber'] = 'Page ' + currentPage + ' of ' + visiblePageCount;
+      (window as any).survey.render();
     });
+
     (window as any).survey.onComplete.add(function (model, options) {
       that.pushCurrentSurveyData(model.data);
+      that['isCompletionPage'] = true;
     });
+
     let converter = new Showdown.Converter();
+
     (window as any).survey.onTextMarkdown.add(function (survey, options) {
       //convert the markdown text to html
       let str = converter.makeHtml(options.text);
@@ -40,6 +52,7 @@ export default class SurveyCardComponent extends Vue {
       //set html
       options.html = str;
     });
+
     (window as any).survey.onValidateQuestion.add(this.surveyValidateQuestion);
     this.surveyService()
       .getAnswer(this.userId())
@@ -47,8 +60,12 @@ export default class SurveyCardComponent extends Vue {
         let result = { ...res.data['singleNode'], ...res.data['parentNode'], ...res.data['singleNodeMultipleAnswer'] };
         (window as any).survey.data = result;
       });
+
     return {
       survey: (window as any).survey,
+      pageNumber: 'Page 1 of 15',
+      progress: '7%',
+      isCompletionPage: false,
     };
   }
 
@@ -82,6 +99,22 @@ export default class SurveyCardComponent extends Vue {
       .catch(error => {
         console.log(error);
       });
+  }
+
+  clearAndGoToHomePage() {
+    (window as any).survey.clear();
+    this.surveyService().clearAnswer(this.userId());
+    (<any>this).$router.push('/');
+  }
+
+  closeDialog(): void {
+    (<any>this.$refs.clearAndExitModal).hide();
+  }
+
+  prepareClearAndExitModal(): void {
+    if (<any>this.$refs.clearAndExitModal) {
+      (<any>this.$refs.clearAndExitModal).show();
+    }
   }
 
   private convertSurveyDataToAnswer(surveyData: any): Answer[] {
