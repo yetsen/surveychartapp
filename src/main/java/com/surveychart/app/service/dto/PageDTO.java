@@ -18,7 +18,7 @@ public class PageDTO {
 
     public PageDTO (Block block) {
         this.name = block.getName();
-        this.title = block.getTitle();
+        this.title = ""; //Invisible Page Title
         this.description = block.getDescription();
         this.elements = block.getQuestions().stream()
             .sorted(Comparator.comparing(Question::getId))
