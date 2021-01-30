@@ -141,7 +141,7 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: info@surveychartapp.com
+    from: info@circulareconomyknowledgehub.com
   swagger:
     default-include-pattern: /api/.*
     title: surveyChartApp API
