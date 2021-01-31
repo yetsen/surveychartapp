@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="md" type="dark" class="bg-primary" sticky>
+    <b-navbar toggleable="md" type="light" class="fixed-top">
         <b-navbar-brand class="logo" b-link to="/">
             <span class="logo-img"></span>
             <span v-text="$t('global.title')" class="navbar-title">surveyChartApp</span>

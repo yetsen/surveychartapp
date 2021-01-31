@@ -1,6 +1,8 @@
 /* ==========================================================================
     Navbar
     ========================================================================== */
+@import 'src/main/webapp/content/scss/bootswatch/variables';
+
 .navbar-version {
   font-size: 10px;
 }
@@ -23,15 +25,15 @@
 }
 
 a {
-  color: rgba(255, 255, 255, 0.6);
+  color: $navbar-light-color;
 }
 
 a:focus {
-  color: #fff;
+  color: $navbar-light-hover-color;
   text-decoration: none;
 }
 a:hover {
-  color: #fff;
+  color: $navbar-light-hover-color;
   text-decoration: none;
 }
 

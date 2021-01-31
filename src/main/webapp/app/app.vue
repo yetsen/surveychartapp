@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <ribbon></ribbon>
-    <jhi-navbar></jhi-navbar>
-    <div class="container-fluid">
-      <div class="card jh-card">
+      <ribbon></ribbon>
+      <jhi-navbar></jhi-navbar>
+      <span>
         <router-view></router-view>
-      </div>
+      </span>
       <b-modal id="login-page" hide-footer lazy>
-        <span slot="modal-title" id="login-title" v-text="$t('login.title')">Sign in</span>
-        <login-form></login-form>
+          <span slot="modal-title" id="login-title" v-text="$t('login.title')">Sign in</span>
+          <login-form></login-form>
       </b-modal>
-
       <jhi-footer></jhi-footer>
-    </div>
   </div>
 </template>
 
