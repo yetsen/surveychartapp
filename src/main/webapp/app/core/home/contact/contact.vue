@@ -1,12 +1,10 @@
 <template>
-    <section id="contact">
-        <div class="row">
-            <div class="col-lg-12 text-center">
+    <section class="container" id="contact">
+        <div class="row vh-100">
+            <div class="col-md-12 text-center">
                 <h2>Contact</h2>
                 <hr class="star-primary">
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-3">
                 <div class="contact-info">
                     <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
