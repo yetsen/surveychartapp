@@ -52,6 +52,14 @@ export default class JhiNavbar extends Vue {
     return this.$store.getters.authenticated;
   }
 
+  private get ceAssessmentLink(): String {
+    if (this.authenticated) {
+      return '/survey';
+    } else {
+      return '/register';
+    }
+  }
+
   public hasAnyAuthority(authorities: any): boolean {
     this.accountService()
       .hasAnyAuthorityAndCheckAuth(authorities)
