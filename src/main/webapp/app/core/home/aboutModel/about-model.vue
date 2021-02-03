@@ -1,7 +1,8 @@
 <template>
-    <section id="aboutModel">
-        <div class="one-page">
+    <section class="container" id="aboutModel">
+        <div class="align-self-center">
             <h2 class="text-center">About The Model</h2>
+            <hr class="star-primary">
             <p class="text-muted mb-5 text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
             <div class="row">
                 <div class="col-sm-6 col-lg-4 mb-3 text-center">

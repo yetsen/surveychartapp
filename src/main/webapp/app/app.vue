@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-      <ribbon></ribbon>
       <jhi-navbar></jhi-navbar>
       <span>
         <router-view></router-view>

@@ -15,6 +15,7 @@ export default class JhiNavbar extends Vue {
   private currentLanguage = this.$store.getters.currentLanguage;
   private languages: any = this.$store.getters.languages;
   private hasAnyAuthorityValue = false;
+  private scrollPosition = 0;
 
   created() {
     this.translationService().refreshTranslation(this.currentLanguage);
@@ -79,5 +80,13 @@ export default class JhiNavbar extends Vue {
 
   public isInHomePage(): boolean {
     return this.$route.name === 'Home';
+  }
+
+  public updateScroll() {
+    this.scrollPosition = window.scrollY;
+  }
+
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   }
 }

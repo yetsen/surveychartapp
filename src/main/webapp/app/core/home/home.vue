@@ -1,11 +1,9 @@
 <template>
     <span>
         <projectDescription></projectDescription>
-        <div class="container">
-            <aboutModel></aboutModel>
-            <teamVideos></teamVideos>
-            <contact></contact>
-        </div>
+        <aboutModel></aboutModel>
+        <teamVideos></teamVideos>
+        <contact></contact>
     </span>
 </template>
 
