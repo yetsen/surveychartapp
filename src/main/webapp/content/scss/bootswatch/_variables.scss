@@ -68,9 +68,9 @@ $dropdown-link-hover-bg: $secondary !default;
 $navbar-dark-color: rgba($white, 0.6) !default;
 $navbar-dark-hover-color: $white !default;
 
-$navbar-light-color: rgba($black, 0.3) !default;
-$navbar-light-hover-color: $gray-700 !default;
-$navbar-light-active-color: $gray-700 !default;
+$navbar-light-color: $gray-700 !default;
+$navbar-light-hover-color: rgba($black, 0.3) !default;
+$navbar-light-active-color: rgba($black, 0.3) !default;
 $navbar-light-disabled-color: rgba($black, 0.1) !default;
 
 // Pagination

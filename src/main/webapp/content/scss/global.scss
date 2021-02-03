@@ -278,4 +278,14 @@ ui bootstrap tweaks
   margin-left: 10px;
 }
 
+.project-description {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('https://source.unsplash.com/XSCSi7qeIJc/1920x1080');
+  //background-image: url('../images/main-page-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */
