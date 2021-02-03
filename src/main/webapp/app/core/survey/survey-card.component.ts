@@ -25,6 +25,7 @@ export default class SurveyCardComponent extends Vue {
     json.showNavigationButtons = 'none';
     json.showProgressBar = 'none';
     (window as any).survey = new SurveyVue.Model(json);
+    (window as any).survey.questionTitleTemplate = '{title}';
     let that = this;
 
     (window as any).survey.onCurrentPageChanged.add(function (model, options) {
