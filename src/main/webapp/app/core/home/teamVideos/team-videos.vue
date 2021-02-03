@@ -9,7 +9,7 @@
         <div class="row">
 
             <div class="col-sm-2 text-right">
-                <img src="https://research.aston.ac.uk/files-asset/5770742/Prasanta_Dey.jpg" width="100" height="150" class="img-responsive">
+                <img src="https://research.aston.ac.uk/files-asset/5770742/Prasanta_Dey.jpg" width="120" height="150" class="img-responsive">
             </div>
             <div class="col-sm-10 text-left">
                 <h4>Prasanta Dey</h4>
@@ -24,7 +24,7 @@
         <br>
         <div class="row">
             <div class="col-sm-2 text-right">
-                <img src="https://research.aston.ac.uk/files-asset/29337137/Dr_Soumyadeb_Chowdhury.png" width="100" height="150" class="img-responsive">
+                <img src="https://research.aston.ac.uk/files-asset/29337137/Dr_Soumyadeb_Chowdhury.png" width="120" height="150" class="img-responsive">
             </div>
             <div class="col-sm-10 text-left">
                 <h4>Soumyadeb Chowdhury</h4>
