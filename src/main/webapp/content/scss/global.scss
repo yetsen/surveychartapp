@@ -263,15 +263,19 @@ ui bootstrap tweaks
 }
 .sv_next_btn {
   background-color: #28a745;
+  margin-right: 10px;
 }
 .sv_prev_btn {
   background-color: #a72828;
+  margin-left: 10px;
 }
 .sv_complete_btn {
   background-color: #0000ff;
+  margin-right: 10px;
 }
 .sv_clear_btn {
   background-color: $primary;
+  margin-left: 10px;
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
