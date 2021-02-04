@@ -61,14 +61,14 @@ export default class JhiNavbar extends Vue {
     }
   }
 
-  /* public hasAnyAuthority(authorities: any): boolean {
+  public hasAnyAuthority(authorities: any): boolean {
     this.accountService()
       .hasAnyAuthorityAndCheckAuth(authorities)
       .then(value => {
         this.hasAnyAuthorityValue = value;
       });
     return this.hasAnyAuthorityValue;
-  } */
+  }
 
   public get swaggerEnabled(): boolean {
     return this.$store.getters.activeProfiles.indexOf('swagger') > -1;
