@@ -872,7 +872,7 @@
                                 </goals>
                             </execution>
                             <execution>
-                                <id>webpack build dev</id>
+                                <id>webpack build prod</id>
                                 <goals>
                                     <goal>npm</goal>
                                 </goals>
