@@ -51,7 +51,7 @@
                 <b-nav-item-dropdown
                     right
                     id="entity-menu"
-                    v-if="false && authenticated"
+                    v-if="hasAnyAuthority('ROLE_ADMIN') && authenticated"
                     active-class="active" class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="th-list" />
@@ -62,7 +62,7 @@
                 <b-nav-item-dropdown
                     right
                     id="admin-menu"
-                    v-if="false && authenticated"
+                    v-if="hasAnyAuthority('ROLE_ADMIN') && authenticated"
                     :class="{'router-link-active': subIsActive('/admin')}"
                     active-class="active"
                     class="pointer">
