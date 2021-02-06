@@ -27,7 +27,7 @@
                         <span v-text="$t('global.menu.home')">Home</span>
                     </span>
                 </b-nav-item>
-                <b-nav-item v-if="isInHomePage()" :to="ceAssessmentLink" exact>
+                <b-nav-item v-if="isInHomePage()" @click="onCEAssessmentClick" exact>
                     <span>
                         <font-awesome-icon icon="pen" />
                         <span v-text="$t('global.menu.startTest')"></span>

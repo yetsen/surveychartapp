@@ -53,11 +53,11 @@ export default class JhiNavbar extends Vue {
     return this.$store.getters.authenticated;
   }
 
-  private get ceAssessmentLink(): String {
+  private onCEAssessmentClick(): void {
     if (this.authenticated) {
-      return '/survey';
+      this.$router.push('/survey');
     } else {
-      return '/register';
+      this.openLogin();
     }
   }
 
