@@ -10,6 +10,7 @@ import Router from 'vue-router';
 const Home = () => import('@/core/home/home.vue');
 const Error = () => import('@/core/error/error.vue');
 const SurveyCard = () => import('@/core/survey/survey-card.vue');
+const Dashboard = () => import('@/core/dashboard/dashboard.vue');
 import account from '@/router/account.ts';
 import admin from '@/router/admin.ts';
 import entities from '@/router/entities.ts';
@@ -30,6 +31,11 @@ export default new Router({
       path: '/survey',
       name: 'SurveyCard',
       component: SurveyCard
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/forbidden',
