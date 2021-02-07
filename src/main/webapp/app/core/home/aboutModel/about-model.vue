@@ -48,5 +48,5 @@
 
 <script lang="ts" src="./about-model.component.ts">
 </script>
-<style lang="scss" src="./about-model.scss">
+<style lang="scss" src="./about-model.scss" scoped>
 </style>

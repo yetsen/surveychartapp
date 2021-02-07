@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container-fluid dashboard">
         <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12">
                 <dummyComponent></dummyComponent>
             </div>
-            <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12">
                 <dummyComponent></dummyComponent>
             </div>
         </div>
@@ -24,3 +24,7 @@
 
 <script lang="ts" src="./dashboard.component.ts">
 </script>
+
+
+<style lang="scss" src="./dashboard.scss" scoped>
+</style>
