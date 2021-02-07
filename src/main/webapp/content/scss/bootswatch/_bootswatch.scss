@@ -3,7 +3,7 @@
 
 // Variables ===================================================================
 
-$web-font-path: 'https://fonts.googleapis.com/css?family=Montserrat&display=swap' !default;
+$web-font-path: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap' !default;
 @import url($web-font-path);
 
 // Navbar ======================================================================
@@ -253,7 +253,7 @@ legend {
 // Navs ========================================================================
 
 .dropdown-menu {
-  font-family: $font-family-sans-serif;
+  font-family: $headings-font-family;
 }
 
 .breadcrumb {
