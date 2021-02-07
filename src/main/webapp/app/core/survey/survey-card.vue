@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <survey :survey='survey'></survey>
-                <div v-if="!isCompletionPage" class="panel-footer card-footer text-center" style="display: flow-root">
+                <div v-if="!isCompletionPage" class="panel-footer card-footer">
                     <input v-if="!survey.isFirstPage" type="button" @click="survey.prevPage()" value="Previous" class="btn sv_prev_btn float-left" >
                     <input type="button" @click="prepareClearAndExitModal()" value="Clear & Exit" class="btn sv_clear_btn float-left" >
                     <input v-if="!survey.isLastPage" type="button" @click="survey.nextPage()" value="Next" class="btn sv_next_btn float-right">
