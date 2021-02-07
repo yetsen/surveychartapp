@@ -5,53 +5,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="section-title">CONTACT</div>
+                        <h2 class="section-title">CONTACT</h2>
                         <h2>Get In Touch Using The Form</h2>
-                        <p>You can stop by our office for a cup of coffee and just use the contact form below for any questions and inquiries</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="address"><font-awesome-icon icon="map-marker-alt" />Aston St, Birmingham B4 7ET, United Kingdom</li>
-                            <li><font-awesome-icon icon="phone" /><a href="tel:003024630820">+44 121 204 3000</a></li>
-                            <li><font-awesome-icon icon="phone" /><a href="tel:003024630820">+44 121 204 3000</a></li>
-                            <li><font-awesome-icon icon="envelope" /><a href="mailto:office@us.com">office@us.com</a></li>
-                        </ul>
-                        <h3>Follow Us On Social Media</h3>
-
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-pinterest fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-behance fa-stack-1x"></i>
-                            </a>
-                        </span>
+                        <p>You can get in touch using the form for any questions and inquiries. We can contact you as soon as possible.</p>
+                        <font-awesome-icon icon="envelope" /><a href="mailto:info@circulareconomyknowledgehub.com">info@circulareconomyknowledgehub.com</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
