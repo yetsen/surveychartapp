@@ -29,6 +29,7 @@ import ConfigurationService from '@/admin/configuration/configuration.service';
 import VueSmoothScroll from 'vue2-smooth-scroll';
 import VueYouTubeEmbed from 'vue-youtube-embed';
 import SurveyService from '@/core/survey.service';
+import VueApexCharts from 'vue-apexcharts';
 
 /* tslint:disable */
 
@@ -45,6 +46,9 @@ Vue.use(VueSmoothScroll, {
   updateHistory: false,
 });
 Vue.use(VueYouTubeEmbed);
+Vue.use(VueApexCharts);
+
+Vue.component('apexchart', VueApexCharts);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('jhi-item-count', JhiItemCountComponent);
 Vue.component('jhi-sort-indicator', JhiSortIndicatorComponent);
