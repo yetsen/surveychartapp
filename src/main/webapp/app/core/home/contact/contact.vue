@@ -1,52 +1,92 @@
 <template>
-    <section class="container" id="contact">
-        <div class="row vh-100">
-            <div class="col-md-12 text-center">
-                <h2>Contact</h2>
-                <hr class="star-primary">
-            </div>
-            <div class="col-md-3">
-                <div class="contact-info">
-                    <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-                    <h2>Contact Us</h2>
-                    <h4>We would love to hear from you !</h4>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="contact-form">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="fname">First Name:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+    <!-- Contact -->
+    <div id="contact" class="form-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">CONTACT</div>
+                        <h2>Get In Touch Using The Form</h2>
+                        <p>You can stop by our office for a cup of coffee and just use the contact form below for any questions and inquiries</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="address"><font-awesome-icon icon="map-marker-alt" />Aston St, Birmingham B4 7ET, United Kingdom</li>
+                            <li><font-awesome-icon icon="phone" /><a href="tel:003024630820">+44 121 204 3000</a></li>
+                            <li><font-awesome-icon icon="phone" /><a href="tel:003024630820">+44 121 204 3000</a></li>
+                            <li><font-awesome-icon icon="envelope" /><a href="mailto:office@us.com">office@us.com</a></li>
+                        </ul>
+                        <h3>Follow Us On Social Media</h3>
+
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-pinterest fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-behance fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="lname">Last Name:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Email:</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="comment">Comment:</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-2 -->
+    <!-- end of contact -->
 </template>
 
 <script lang="ts" src="./contact.component.ts">
