@@ -1,6 +1,12 @@
 <template>
     <div class="card">
-        <apexchart type="bar" :options="chartOptions" :series="series"></apexchart>
+        <div class="card-header text-center">
+            Survey Result
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-center">Special title treatment</h5>
+            <apexchart type="bar" :options="chartOptions" :series="series"></apexchart>
+        </div>
     </div>
 </template>
 
