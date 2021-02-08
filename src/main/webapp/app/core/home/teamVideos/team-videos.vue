@@ -8,11 +8,13 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-2 col-xs-1">
 
-                <div class="col-sm-2 text-right">
+                </div>
+                <div class="col-md-2 col-xs-2">
                     <img src="https://research.aston.ac.uk/files-asset/5770742/Prasanta_Dey.jpg" width="120" height="150" class="img-responsive">
                 </div>
-                <div class="col-sm-10 text-left">
+                <div class="col-md-8 col-xs-9">
                     <h4>Prasanta Dey</h4>
                     <p><strong>Aston Business School</strong>
                         <br>Professor
@@ -24,10 +26,13 @@
 
             <br>
             <div class="row">
-                <div class="col-sm-2 text-right">
+                <div class="col-md-2 col-xs-1">
+
+                </div>
+                <div class="col-md-2 col-xs-2">
                     <img src="https://research.aston.ac.uk/files-asset/29337137/Dr_Soumyadeb_Chowdhury.png" width="120" height="150" class="img-responsive">
                 </div>
-                <div class="col-sm-10 text-left">
+                <div class="col-md-8 col-xs-9">
                     <h4>Soumyadeb Chowdhury</h4>
                     <p><strong>Aston Business School</strong>
                         <br>Dr
