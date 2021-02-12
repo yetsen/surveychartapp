@@ -80,7 +80,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" :disabled="$v.resetPassword.$invalid" class="btn btn-primary" v-text="$t('password.form.button')">Save</button>
+                            <button type="submit" class="btn btn-primary" v-text="$t('password.form.button')">Save</button>
                         </form>
                     </div>
                 </div>

@@ -7,7 +7,8 @@
                     <div class="text-container">
                         <h2 class="section-title">CONTACT</h2>
                         <h2>Get In Touch Using The Form</h2>
-                        <p>You can get in touch using the form for any questions and inquiries. We can contact you as soon as possible.</p>
+                        <p>You can get in touch using the form for any questions and inquiries.</p>
+                        <p>We can contact you as soon as possible.</p>
                         <font-awesome-icon icon="envelope" /><a href="mailto:info@circulareconomyknowledgehub.com">info@circulareconomyknowledgehub.com</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->

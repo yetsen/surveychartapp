@@ -23,7 +23,7 @@
                             <p v-text="$t('global.messages.error.dontmatch')">The password and its confirmation do not match!</p>
                         </div>
 
-                        <div class="alert alert-warning" v-if="!success && !keyMissing">
+                        <div class="alert alert-danger" v-if="!success && !keyMissing">
                             <p v-text="$t('reset.finish.messages.info')">Choose a new password.</p>
                         </div>
 
@@ -76,7 +76,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <button type="submit" :disabled="$v.resetAccount.$invalid" class="btn btn-primary" v-text="$t('password.form.button')">Save</button>
+                                <button type="submit" class="btn btn-primary" v-text="$t('password.form.button')">Save</button>
                             </form>
                         </div>
                     </div>

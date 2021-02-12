@@ -6,7 +6,7 @@
                     <div class="col-md-8">
                         <h1 v-text="$t('reset.request.title')">Reset your password</h1>
 
-                        <div class="alert alert-warning" v-if="!success">
+                        <div class="alert alert-danger" v-if="!success">
                             <p v-text="$t('reset.request.messages.info')">Enter the email address you used to register.</p>
                         </div>
 
@@ -37,9 +37,9 @@
                                            v-text="$t('global.messages.validate.email.maxlength')">
                                         Your email cannot be longer than 100 characters.
                                     </small>
-                                </div>
+                                </div>r
                             </div>
-                            <button type="submit" :disabled="$v.resetAccount.$invalid" class="btn btn-primary" v-text="$t('reset.request.form.button')">Reset</button>
+                            <button type="submit" class="btn btn-primary" v-text="$t('reset.request.form.button')">Reset</button>
                         </form>
                     </div>
                 </div>

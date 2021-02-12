@@ -86,7 +86,7 @@
                             <option v-for="(language, key) in languages" :value="key" :key="`lang-${key}`">{{language.name}}</option>
                         </select>
                     </div>
-                    <button type="submit" :disabled="$v.settingsAccount.$invalid" class="btn btn-primary" v-text="$t('settings.form.button')">Save</button>
+                    <button type="submit" class="btn btn-primary" v-text="$t('settings.form.button')">Save</button>
                 </form>
             </div>
         </div>

@@ -108,7 +108,7 @@
                         <font-awesome-icon icon="ban"></font-awesome-icon>&nbsp;<span
                             v-text="$t('entity.action.cancel')">Cancel</span>
                     </button>
-                    <button type="submit" :disabled="$v.userAccount.$invalid || isSaving" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary">
                         <font-awesome-icon icon="save"></font-awesome-icon>&nbsp;<span v-text="$t('entity.action.save')">Save</span>
                     </button>
                 </div>
