@@ -50,7 +50,7 @@
                                         </small>
                                         <small class="form-text text-danger"
                                                v-if="!$v.resetAccount.newPassword.valid" v-text="$t('global.messages.validate.newpassword.generalValidation')">
-                                            Your password should contain at least one camel case, lower case and number character.
+                                            Your password should contain at least one upper case, lower case and number character.
                                         </small>
                                     </div>
                                 </div>

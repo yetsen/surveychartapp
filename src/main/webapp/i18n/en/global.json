@@ -79,7 +79,7 @@
           "required": "Your password is required.",
           "minlength": "Your password is required to be at least 4 characters.",
           "maxlength": "Your password cannot be longer than 50 characters.",
-          "generalValidation": "Your password should contain at least one camel case, lower case and number character.",
+          "generalValidation": "Your password should contain at least one upper case, lower case and number character.",
           "strength": "Password strength:"
         },
         "confirmpassword": {

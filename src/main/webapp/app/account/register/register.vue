@@ -94,7 +94,7 @@
                                     </small>
                                     <small class="form-text text-danger"
                                            v-if="!$v.registerAccount.password.valid" v-text="$t('global.messages.validate.newpassword.generalValidation')">
-                                        Your password should contain at least one camel case, lower case and number character.
+                                        Your password should contain at least one upper case, lower case and number character.
                                     </small>
                                 </div>
                                 <!--<jhi-password-strength-bar [passwordToCheck]="registerAccount.password"></jhi-password-strength-bar>-->
