@@ -112,3 +112,6 @@ jhipster:
 # ===================================================================
 
 # application:
+application:
+  mail:
+    fromName: Test From Name

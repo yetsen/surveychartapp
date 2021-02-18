@@ -1,12 +1,15 @@
 package com.surveychart.app.service;
 
+import com.surveychart.app.config.ApplicationProperties;
 import com.surveychart.app.domain.User;
 
 import io.github.jhipster.config.JHipsterProperties;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import javax.mail.MessagingException;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
@@ -36,16 +39,18 @@ public class MailService {
 
     private final JHipsterProperties jHipsterProperties;
 
+    private final ApplicationProperties applicationProperties;
+
     private final JavaMailSender javaMailSender;
 
     private final MessageSource messageSource;
 
     private final SpringTemplateEngine templateEngine;
 
-    public MailService(JHipsterProperties jHipsterProperties, JavaMailSender javaMailSender,
-            MessageSource messageSource, SpringTemplateEngine templateEngine) {
+    public MailService (JHipsterProperties jHipsterProperties, ApplicationProperties applicationProperties, JavaMailSender javaMailSender, MessageSource messageSource, SpringTemplateEngine templateEngine) {
 
         this.jHipsterProperties = jHipsterProperties;
+        this.applicationProperties = applicationProperties;
         this.javaMailSender = javaMailSender;
         this.messageSource = messageSource;
         this.templateEngine = templateEngine;
@@ -61,12 +66,12 @@ public class MailService {
         try {
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, StandardCharsets.UTF_8.name());
             message.setTo(to);
-            message.setFrom(jHipsterProperties.getMail().getFrom());
+            message.setFrom(new InternetAddress(jHipsterProperties.getMail().getFrom(), applicationProperties.getMail().getFromName()));
             message.setSubject(subject);
             message.setText(content, isHtml);
             javaMailSender.send(mimeMessage);
             log.debug("Sent email to User '{}'", to);
-        }  catch (MailException | MessagingException e) {
+        }  catch (MailException | MessagingException | UnsupportedEncodingException e) {
             log.warn("Email could not be sent to user '{}'", to, e);
         }
     }

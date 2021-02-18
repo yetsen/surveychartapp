@@ -1,5 +1,6 @@
 package com.surveychart.app.service;
 
+import com.surveychart.app.config.ApplicationProperties;
 import com.surveychart.app.config.Constants;
 
 import com.surveychart.app.SurveyChartApp;
@@ -19,6 +20,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import javax.mail.Multipart;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
@@ -53,6 +55,9 @@ public class MailServiceIT {
     private JHipsterProperties jHipsterProperties;
 
     @Autowired
+    private ApplicationProperties applicationProperties;
+
+    @Autowired
     private MessageSource messageSource;
 
     @Autowired
@@ -70,7 +75,7 @@ public class MailServiceIT {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         doNothing().when(javaMailSender).send(any(MimeMessage.class));
-        mailService = new MailService(jHipsterProperties, javaMailSender, messageSource, templateEngine);
+        mailService = new MailService(jHipsterProperties, applicationProperties, javaMailSender, messageSource, templateEngine);
     }
 
     @Test
@@ -80,7 +85,8 @@ public class MailServiceIT {
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getSubject()).isEqualTo("testSubject");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo("john.doe@example.com");
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent()).isInstanceOf(String.class);
         assertThat(message.getContent().toString()).isEqualTo("testContent");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/plain; charset=UTF-8");
@@ -93,7 +99,8 @@ public class MailServiceIT {
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getSubject()).isEqualTo("testSubject");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo("john.doe@example.com");
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent()).isInstanceOf(String.class);
         assertThat(message.getContent().toString()).isEqualTo("testContent");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -110,7 +117,8 @@ public class MailServiceIT {
         part.writeTo(aos);
         assertThat(message.getSubject()).isEqualTo("testSubject");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo("john.doe@example.com");
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent()).isInstanceOf(Multipart.class);
         assertThat(aos.toString()).isEqualTo("\r\ntestContent");
         assertThat(part.getDataHandler().getContentType()).isEqualTo("text/plain; charset=UTF-8");
@@ -127,7 +135,8 @@ public class MailServiceIT {
         part.writeTo(aos);
         assertThat(message.getSubject()).isEqualTo("testSubject");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo("john.doe@example.com");
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent()).isInstanceOf(Multipart.class);
         assertThat(aos.toString()).isEqualTo("\r\ntestContent");
         assertThat(part.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -144,7 +153,8 @@ public class MailServiceIT {
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getSubject()).isEqualTo("test title");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent().toString()).isEqualToNormalizingNewlines("<html>test title, http://127.0.0.1:8080, john</html>\n");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
@@ -159,7 +169,8 @@ public class MailServiceIT {
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
@@ -174,7 +185,8 @@ public class MailServiceIT {
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
@@ -189,7 +201,8 @@ public class MailServiceIT {
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
-        assertThat(message.getFrom()[0].toString()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getAddress()).isEqualTo(jHipsterProperties.getMail().getFrom());
+        assertThat(((InternetAddress)message.getFrom()[0]).getPersonal()).isEqualTo(applicationProperties.getMail().getFromName());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
