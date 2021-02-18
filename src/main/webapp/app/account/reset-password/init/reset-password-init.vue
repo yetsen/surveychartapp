@@ -37,7 +37,7 @@
                                            v-text="$t('global.messages.validate.email.maxlength')">
                                         Your email cannot be longer than 100 characters.
                                     </small>
-                                </div>r
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary" v-text="$t('reset.request.form.button')">Reset</button>
                         </form>
