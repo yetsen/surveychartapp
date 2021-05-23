@@ -51,7 +51,7 @@
                 <b-nav-item-dropdown
                     right
                     id="entity-menu"
-                    v-if="hasAnyAuthority('ROLE_ADMIN') && authenticated"
+                    v-if="authenticated && hasAnyAuthority('ROLE_ADMIN')"
                     active-class="active" class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="th-list" />
@@ -62,7 +62,7 @@
                 <b-nav-item-dropdown
                     right
                     id="admin-menu"
-                    v-if="hasAnyAuthority('ROLE_ADMIN') && authenticated"
+                    v-if="authenticated && hasAnyAuthority('ROLE_ADMIN')"
                     :class="{'router-link-active': subIsActive('/admin')}"
                     active-class="active"
                     class="pointer">
@@ -130,9 +130,8 @@
                         <font-awesome-icon icon="lock" />
                         <span v-text="$t('global.menu.account.password')">Password</span>
                     </b-dropdown-item>
-                    <b-dropdown-item to="/account/sessions" tag="b-dropdown-item" v-if="authenticated" active-class="active">
-                        <font-awesome-icon icon="cloud" />
-                        <span v-text="$t('global.menu.account.sessions')">Sessions</span>
+                    <b-dropdown-item to="/dashboard" tag="b-dropdown-item" v-if="authenticated" active-class="active">
+                        <span v-text="$t('global.menu.dashboard')">Dashboard</span>
                     </b-dropdown-item>
                     <b-dropdown-item v-if="authenticated"  v-on:click="logout()" id="logout" active-class="active">
                         <font-awesome-icon icon="sign-out-alt" />

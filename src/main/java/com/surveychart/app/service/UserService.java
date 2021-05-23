@@ -2,8 +2,10 @@ package com.surveychart.app.service;
 
 import com.surveychart.app.config.Constants;
 import com.surveychart.app.domain.Authority;
+import com.surveychart.app.domain.Company;
 import com.surveychart.app.domain.User;
 import com.surveychart.app.repository.AuthorityRepository;
+import com.surveychart.app.repository.CompanyRepository;
 import com.surveychart.app.repository.PersistentTokenRepository;
 import com.surveychart.app.repository.UserRepository;
 import com.surveychart.app.security.AuthoritiesConstants;
@@ -44,11 +46,15 @@ public class UserService {
 
     private final AuthorityRepository authorityRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, PersistentTokenRepository persistentTokenRepository, AuthorityRepository authorityRepository) {
+    private final CompanyRepository companyRepository;
+
+    public UserService (UserRepository userRepository, PasswordEncoder passwordEncoder, PersistentTokenRepository persistentTokenRepository, AuthorityRepository authorityRepository,
+            CompanyRepository companyRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.persistentTokenRepository = persistentTokenRepository;
         this.authorityRepository = authorityRepository;
+        this.companyRepository = companyRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -85,7 +91,7 @@ public class UserService {
             });
     }
 
-    public User registerUser(UserDTO userDTO, String password) {
+    public User registerUser (UserDTO userDTO, String password, String companyCode) {
         userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).ifPresent(existingUser -> {
             boolean removed = removeNonActivatedUser(existingUser);
             if (!removed) {
@@ -98,6 +104,15 @@ public class UserService {
                 throw new EmailAlreadyUsedException();
             }
         });
+        boolean isEmployer = false;
+        Optional<Company> companyOptional = companyRepository.findByEmployeeCode(companyCode);
+        if (!companyOptional.isPresent()) {
+            companyOptional = companyRepository.findByEmployerCode(companyCode);
+            if (!companyOptional.isPresent()) {
+                throw new CompanyCodeNotFoundException();
+            }
+            isEmployer = true;
+        }
         User newUser = new User();
         String encryptedPassword = passwordEncoder.encode(password);
         newUser.setLogin(userDTO.getLogin().toLowerCase());
@@ -117,6 +132,8 @@ public class UserService {
         Set<Authority> authorities = new HashSet<>();
         authorityRepository.findById(AuthoritiesConstants.USER).ifPresent(authorities::add);
         newUser.setAuthorities(authorities);
+        newUser.setEmployer(isEmployer);
+        newUser.setCompany(companyOptional.get());
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
         return newUser;

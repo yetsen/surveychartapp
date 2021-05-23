@@ -1,24 +1,27 @@
 import Component from 'vue-class-component';
-import { Vue } from 'vue-property-decorator';
+import { Prop, Vue } from 'vue-property-decorator';
+import offlineExporting from 'highcharts/modules/offline-exporting';
+import exportingInit from 'highcharts/modules/exporting';
+import heatmap from 'highcharts/modules/heatmap';
+import Highcharts from 'highcharts';
+import More from 'highcharts/highcharts-more';
+import JSONfn from 'json-fn/jsonfn.js';
 
+exportingInit(Highcharts);
+offlineExporting(Highcharts);
+More(Highcharts);
+heatmap(Highcharts);
 @Component
 export default class DummyComponent extends Vue {
+  @Prop()
+  chartOptions: string;
+
   data() {
+    let parsed = JSONfn.parse(JSONfn.parse(this.chartOptions));
+    //console.log(parsed)
+    //console.log(JSONfn.stringify())
     return {
-      chartOptions: {
-        chart: {
-          id: 'vuechart-example',
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-        },
-      },
-      series: [
-        {
-          name: 'series-1',
-          data: [30, 40, 35, 50, 49, 60, 70, 91],
-        },
-      ],
+      chartOptionsObject: parsed,
     };
   }
 }

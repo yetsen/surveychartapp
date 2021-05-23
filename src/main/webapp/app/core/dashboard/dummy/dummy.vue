@@ -1,13 +1,9 @@
 <template>
-    <div class="card">
-        <div class="card-header text-center">
-            Survey Result
-        </div>
-        <div class="card-body">
-            <h5 class="card-title text-center">Special title treatment</h5>
-            <apexchart type="bar" :options="chartOptions" :series="series"></apexchart>
-        </div>
+  <div class="card">
+    <div class="card-body">
+      <highcharts :options="chartOptionsObject"></highcharts>
     </div>
+  </div>
 </template>
 
 <script lang="ts" src="./dummy.component.ts">

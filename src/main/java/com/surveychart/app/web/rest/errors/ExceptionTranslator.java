@@ -108,6 +108,12 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
     }
 
     @ExceptionHandler
+    public ResponseEntity<Problem> handleCompanyCodeNotFoundException(com.surveychart.app.service.CompanyCodeNotFoundException ex, NativeWebRequest request) {
+        CompanyCodeNotFoundException problem = new CompanyCodeNotFoundException();
+        return create(problem, request, HeaderUtil.createFailureAlert(applicationName,  true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage()));
+    }
+
+    @ExceptionHandler
     public ResponseEntity<Problem> handleEmailAlreadyUsedException(com.surveychart.app.service.EmailAlreadyUsedException ex, NativeWebRequest request) {
         EmailAlreadyUsedException problem = new EmailAlreadyUsedException();
         return create(problem, request, HeaderUtil.createFailureAlert(applicationName,  true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage()));

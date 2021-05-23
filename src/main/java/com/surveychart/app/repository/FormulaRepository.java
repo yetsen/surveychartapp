@@ -1,13 +1,14 @@
 package com.surveychart.app.repository;
 
-import com.surveychart.app.domain.Block;
+
+import com.surveychart.app.domain.Formula;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface BlockRepository  extends JpaRepository<Block, Long> {
+public interface FormulaRepository extends JpaRepository<Formula, Long> {
 
-    @Override List<Block> findAll ();
+	List<Formula> findByIdIn(List<Long> idList);
 }

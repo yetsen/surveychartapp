@@ -5,10 +5,9 @@ import SurveyService from '@/core/survey.service.ts';
 import { Answer } from '@/shared/model/answer.model.ts';
 import Showdown from 'showdown';
 
-SurveyVue.StylesManager.applyTheme('modern');
+SurveyVue.StylesManager.applyTheme('bootstrap');
 
 let Survey = SurveyVue.Survey;
-Survey['cssType'] = 'bootstrap';
 
 @Component({
   name: 'surveyCard',
@@ -42,6 +41,7 @@ export default class SurveyCardComponent extends Vue {
     (window as any).survey.onComplete.add(function (model, options) {
       that.pushCurrentSurveyData(model.data);
       that['isCompletionPage'] = true;
+      (<any>this).$router.push('/dashboard');
     });
 
     let converter = new Showdown.Converter();
@@ -60,7 +60,12 @@ export default class SurveyCardComponent extends Vue {
     this.surveyService()
       .getAnswer(this.userId())
       .then(res => {
-        let result = { ...res.data['singleNode'], ...res.data['parentNode'], ...res.data['singleNodeMultipleAnswer'] };
+        let result = {
+          ...res.data['singleNode'],
+          ...res.data['parentNode'],
+          ...res.data['singleNodeMultipleAnswer'],
+          ...res.data['parentNodeMultipleAnswer'],
+        };
         (window as any).survey.data = result;
       });
 
@@ -77,7 +82,7 @@ export default class SurveyCardComponent extends Vue {
       if (options.value.length < 4) {
         options.error = 'Your consent is required to go on survey.';
       }
-    } else if (options.question.getType() === 'matrix') {
+    } else if (options.question.getType() === 'matrix' || options.question.getType() === 'matrixdropdowm') {
       if (
         !options.question.rows.every(function (row) {
           return (options.value || {})[row.itemValue] !== undefined;
@@ -125,7 +130,7 @@ export default class SurveyCardComponent extends Vue {
     let that = this;
     Object.keys(surveyData).forEach(function (key, index) {
       let value = surveyData[key];
-      if (typeof value === 'string') {
+      if (typeof value === 'string' || typeof value === 'number') {
         let ans = new Answer();
         ans.userId = that.userId();
         ans.questionName = key;
@@ -144,7 +149,11 @@ export default class SurveyCardComponent extends Vue {
           let ans = new Answer();
           ans.userId = that.userId();
           ans.questionName = key;
-          ans.choiceValue = value[key];
+          if (typeof value[key] === 'string') {
+            ans.choiceValue = value[key];
+          } else {
+            ans.choiceValue = String(Object.values(value[key])[0]);
+          }
           answers.push(ans);
         });
       }

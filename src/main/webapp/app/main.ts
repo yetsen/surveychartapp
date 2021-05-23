@@ -30,6 +30,8 @@ import VueSmoothScroll from 'vue2-smooth-scroll';
 import VueYouTubeEmbed from 'vue-youtube-embed';
 import SurveyService from '@/core/survey.service';
 import VueApexCharts from 'vue-apexcharts';
+import HighchartsVue from 'highcharts-vue';
+import ChartService from '@/core/chart.service';
 
 /* tslint:disable */
 
@@ -47,6 +49,7 @@ Vue.use(VueSmoothScroll, {
 });
 Vue.use(VueYouTubeEmbed);
 Vue.use(VueApexCharts);
+Vue.use(HighchartsVue);
 
 Vue.component('apexchart', VueApexCharts);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
@@ -62,6 +65,7 @@ const translationService = new TranslationService(store, i18n);
 const loginService = new LoginService();
 const accountService = new AccountService(store, translationService, (<any>Vue).cookie, router);
 const surveyService = new SurveyService(store);
+const chartService = new ChartService(store);
 
 router.beforeEach((to, from, next) => {
   if (!to.matched.length) {
@@ -107,6 +111,7 @@ new Vue({
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
     surveyService: () => surveyService,
+    chartService: () => chartService,
   },
   i18n,
   store,

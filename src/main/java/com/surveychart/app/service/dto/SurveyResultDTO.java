@@ -1,15 +1,13 @@
 package com.surveychart.app.service.dto;
 
 import com.surveychart.app.domain.Answer;
+import com.surveychart.app.domain.Choice;
 import com.surveychart.app.enums.QuestionType;
 import lombok.Data;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Data
 public class SurveyResultDTO {
@@ -17,6 +15,7 @@ public class SurveyResultDTO {
     Map<String, String> singleNode = new HashMap<>();
     Map<String, List<String>> singleNodeMultipleAnswer = new HashMap<>();
     Map<String, Map<String, String>> parentNode = new HashMap<>();
+    Map<String, Map<String, Map<String, String>>> parentNodeMultipleAnswer = new HashMap<>();
 
     public SurveyResultDTO (List<Answer> answers) {
         answers.forEach(
@@ -30,6 +29,19 @@ public class SurveyResultDTO {
                             .add(answer.getChoice().getValue());
                     } else {
                         singleNode.put(answer.getQuestion().getName(), answer.getChoice().getValue());
+                    }
+                } else if (QuestionType.MATRIX_DROPDOWN.equals(answer.getQuestion().getParent().getType())) {
+                    //TODO: this is temporary. It should work on multiple columns for the future
+                    Map<String, Map<String, String>> node = parentNodeMultipleAnswer.get(answer.getQuestion().getParent().getName());
+                    if (CollectionUtils.isEmpty(node)) {
+                        node = new HashMap<>();
+                    }
+                    Map<String, String> ans = new HashMap<>();
+                    Optional<Choice> choiceOptional = answer.getQuestion().getParent().getChoices().stream().findFirst();
+                    if (choiceOptional.isPresent()) {
+                        ans.put(choiceOptional.get().getName(), answer.getCustomAnswer());
+                        node.put(answer.getQuestion().getName(), ans);
+                        parentNodeMultipleAnswer.put(answer.getQuestion().getParent().getName(), node);
                     }
                 } else {
                     Map<String, String> node = parentNode.get(answer.getQuestion().getParent().getName());
