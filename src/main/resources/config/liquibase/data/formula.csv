@@ -6,7 +6,7 @@ id;name;formula;variables;created_by;last_modified_by
 5;Business Practices [Reduce];(?+?+?+?+?+?)/6;35,36,37,38,39,40;system;system
 6;Business Practices [reuse];(?+?+?+?+?+?)/6;42,43,44,45,46,47;system;system
 7;Business Practices [recycle];(?+?+?+?+?+?)/6;49,50,51,52,53,54;system;system
-8;Operational� Performance;(?+?+?+?+?+?)/6;56,57,58,59,60,61;system;system
+8;Operational Performance;(?+?+?+?+?+?)/6;56,57,58,59,60,61;system;system
 9;Economic Performance;(?+?+?+?+?+?+?)/7;63,64,65,66,67,68,69;system;system
 10;Environmental Performance;(?+?+?+?+?)/5;71,72,73,74,75;system;system
 11;Social Performance;(?+?+?+?+?+?)/6;77,78,79,80,81,82;system;system
