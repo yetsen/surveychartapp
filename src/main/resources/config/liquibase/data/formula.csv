@@ -1,1 +1,33 @@
 id;name;formula;variables;created_by;last_modified_by
+1;Business Practices [design];(?+?+?+?+?)/5;8,9,10,11,12;system;system
+2;Business Practices [procurement];(?+?+?+?+?)/5;16,17,18,19,20;system;system
+3;Business Practices [manufacturing/production/operations];(?+?+?+?+?+?)/6;22,23,24,25,26,27;system;system
+4;Business Practices [resource consumption];(?+?+?+?+?)/5;29,30,31,32,33;system;system
+5;Business Practices [Reduce];(?+?+?+?+?+?)/6;35,36,37,38,39,40;system;system
+6;Business Practices [reuse];(?+?+?+?+?+?)/6;42,43,44,45,46,47;system;system
+7;Business Practices [recycle];(?+?+?+?+?+?)/6;49,50,51,52,53,54;system;system
+8;Operational� Performance;(?+?+?+?+?+?)/6;56,57,58,59,60,61;system;system
+9;Economic Performance;(?+?+?+?+?+?+?)/7;63,64,65,66,67,68,69;system;system
+10;Environmental Performance;(?+?+?+?+?)/5;71,72,73,74,75;system;system
+11;Social Performance;(?+?+?+?+?+?)/6;77,78,79,80,81,82;system;system
+12;Marketing Performance;(?+?+?+?+?)/5;84,85,86,87,88;system;system
+13;Organisational Performance;(?+?+?+?+?+?)/6;90,91,92,93,94,95;system;system
+14;Culture ;(?+?+?+?+?+?+?+?+?)/9;97,98,99,100,101,102,103,104,105;system;system
+15;Job Satisfaction;(?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?)/18;107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124;system;system
+16;Influencing Factors to Adopt CE;(?+?+?+?+?)/5;126,127,128,129,130;system;system
+17;Analytics and Technology Capability to Adopt CE;(?+?+?+?+?+?+?+?)/8;132,133,134,135,136,137,138,139;system;system
+18;Dynamic Capability to Adopt CE;(?+?+?+?+?+?+?+?)/8;141,142,143,144,145,146,147,148;system;system
+19;COVID-19 Impact to Adopt CE;(?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?)/19;150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168;system;system
+20;The Most Impactful Channels;(?+?+?+?+?+?+?+?+?+?+?+?+?)/13;170,171,172,173,174,175,176,177,178,179,180,181,182;system;system
+21;Innovation ;(?+?+?+?+?)/5;184,185,186,187,188;system;system
+22;Environment Policies and Regulations;(?+?+?+?+?+?+?)/7;190,191,192,193,194,195,196;system;system
+23;Skills and Competencies;(?+?+?+?+?+?+?+?)/8;198,199,200,201,202,203,204,205;system;system
+24;Resources ;(?+?+?+?+?)/5;207,208,209,210,211;system;system
+25;Organisational Resilience;(?+?+?+?+?+?+?+?+?+?)/10;213,214,215,216,217,218,219,220,221,222;system;system
+26;Performance/Contribution  towards SDGs;(?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?)/17;224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240;system;system
+27;Adopting Circular Economy for Businesses to Contribute towards SDGs;(?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?)/17;242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258;system;system
+28;Risk Management;(?+?+?+?+?+?+?)/7;260,261,262,263,264,265,266;system;system
+29;Adaptability and Flexibility;(?+?+?+?+?+?+?+?+?+?+?+?)/12;268,269,270,271,272,273,274,275,276,277,278,279;system;system
+30;Leadership;(?+?+?+?+?+?+?+?+?+?+?+?+?)/13;281,282,283,284,285,286,287,288,289,290,291,292,293;system;system
+31;Sustainable Partnerships to Adopt and Implement Circular Economy;(?+?+?+?+?+?)/6;295,296,297,298,299,300;system;system
+32;Category Best Fits the Current Company Strategy;(?+?+?+?+?+?)/6;;;
